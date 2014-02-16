@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "bills management",
   "scripts": {
-    "test": "zuul -- test.js"
+    "test": "zuul -- test/app_test.js"
   },
   "jam": {
     "main": "js/cautionem.js",

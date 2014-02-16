@@ -4,6 +4,7 @@ node_js:
 before_install:
   - "npm install -g jamjs"
   - "npm install -g zuul"
+  - "jam install"
 env:
   global:
   - secure: qLoosqsrVVKHbnfplN+pUkK1V9M+DiUUYFDTCvQ5glT1mmIsBEZ/xfVSoruuFxutNHNfnBajv5iqwI8hB5cvdXKGHSvk2kKlC7kCXVKycjYWY42qQjGVwL5+4+yRvaJW8l+8LG9sNwabiKg2GuyQCAR6+NxxH7DOonAY4S2bnYU=
