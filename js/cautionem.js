@@ -1,11 +1,11 @@
-define(["jquery"],function($){
-    
+define(["jquery"], function($) {
+
     return {
-        start: function(){
+        start: function() {
             $("#content").append(
                 $("<h1>").html("It work!")
-            );        
+            );
         }
     }
-    
+
 });

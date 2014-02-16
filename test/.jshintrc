@@ -1,0 +1,28 @@
+{
+    // Details: https://github.com/victorporof/Sublime-JSHint#using-your-own-jshintrc-options
+    // Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+    // Documentation: http://www.jshint.com/docs/
+    "camelcase": true,
+    "indent": 4,
+    "newcap": true,
+    "nonew": true,
+    "quotmark": true,
+    "strict": false,
+
+    "esnext": false,
+
+
+    "browser": true,
+
+    "globals": {
+        "describe": true,
+        "it": true,
+        "before": true,
+        "after": true,
+        "requirejs": true
+    },
+
+
+    "undef": true,
+    "unused": false
+}

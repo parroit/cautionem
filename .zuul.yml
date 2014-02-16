@@ -3,6 +3,8 @@ ui: mocha-bdd
 html: test/template.html
 scripts:
   - "jam/require.js"
+  - "test/zrequire.js"
+
 browsers:
   - name: chrome
     version: latest

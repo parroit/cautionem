@@ -1,33 +1,25 @@
- describe("cautionem", function() {
-     var cautionem,$;
-     before(function(done) {
-         requirejs(["js/cautionem", "chai", "jquery"], function(cautionemModule, chai, jquery) {
+describe("cautionem", function() {
+    var modules = zrequire("js/cautionem", "jquery");
 
-             chai.should();
+    it("is defined", function() {
+        modules.cautionem.should.be.an("object");
+    });
 
-             cautionem = cautionemModule;
+    describe("start", function() {
 
-             $ = jquery;
 
-             done();
-         });
-     });
+        it("is defined", function() {
+            modules.cautionem.start.should.be.an("function");
+        });
 
-     it("is defined", function() {
-         cautionem.should.be.an("object");
-     });
+        it("alter content", function() {
+            var $ = modules.jquery;
 
-     describe("start", function() {
-         it("is defined", function() {
-             cautionem.start.should.be.an("function");
-         });
-
-         it("alter content", function() {
-             cautionem.start();
+            modules.cautionem.start();
 
             $("#content").html().should.be.equal("<h1>It work!</h1>");
-         });
-     });
+        });
+    });
 
 
- });
+});
