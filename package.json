@@ -2,13 +2,8 @@
   "name": "cautionem",
   "version": "0.0.1",
   "description": "bills management",
-  "devDependencies": {
-    "zuul": "1.0.1",
-    "jam": "~0.6.1",
-    "jamjs": "~0.2.17"
-  },
   "scripts": {
-    "test": "node node_modules/jamjs/bin/jam.js install & zuul -- test.js"
+    "test": "zuul -- test.js"
   },
   "jam": {
     "main": "js/cautionem.js",
