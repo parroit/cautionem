@@ -15,11 +15,15 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/media/parroit/Elements/src/bootstrap-jam"
+			"path": "/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul"
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul"
+			"path": "/media/parroit/Elements/src/jquery-noglobal"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/media/parroit/Elements/src/bootstrap-jam"
 		}
 	]
 }
