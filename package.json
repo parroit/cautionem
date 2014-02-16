@@ -1,21 +1,22 @@
 {
-    "name": "cautionem",
-    "version": "0.0.1",
-    "description": "bills management",
-    "devDependencies": {
-        "zuul": "1.0.1"
-    },
-    "scripts": {
-        "test": "zuul -- test.js"
-    },
-    "jam": {
-        "main": "js/cautionem.js",
-        "dependencies": {
-            "jquery": "~1.9.0",
-            "bootstrap_3": "3.1.2",
-            "mocha-amd": "~1.12.0",
-            "chai-amd": "~1.7.2",
-            "hogan": "2.0.0"
-        }
+  "name": "cautionem",
+  "version": "0.0.1",
+  "description": "bills management",
+  "devDependencies": {
+    "zuul": "1.0.1",
+    "jam": "~0.6.1"
+  },
+  "scripts": {
+    "test": "jam install & zuul -- test.js"
+  },
+  "jam": {
+    "main": "js/cautionem.js",
+    "dependencies": {
+      "jquery": "~1.9.0",
+      "bootstrap_3": "3.1.2",
+      "mocha-amd": "~1.12.0",
+      "chai-amd": "~1.7.2",
+      "hogan": "2.0.0"
     }
+  }
 }
