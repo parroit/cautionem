@@ -2,3 +2,5 @@ client/bower_components
 client/css/*.css
 **/node_modules
 **/config.json
+*.log
+**/sessions
