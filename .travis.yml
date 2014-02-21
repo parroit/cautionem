@@ -6,9 +6,9 @@ before_script:
   - npm install -g grunt-cli
   - cd server
   - npm install
-  - cd $TRAVIS_BUILD_DIR
-  - cd client 
+  - cd ../client 
   - bower install
+  - cd $TRAVIS_BUILD_DIR
 
 env:
   global:
