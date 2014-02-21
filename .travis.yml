@@ -2,10 +2,14 @@ language: node_js
 node_js:
   - '0.10'
 before_script:
+  - npm install -g bower
   - npm install -g grunt-cli
   - cd server
   - npm install
   - cd $TRAVIS_BUILD_DIR
+  - cd client 
+  - bower install
+
 env:
   global:
   - secure: qLoosqsrVVKHbnfplN+pUkK1V9M+DiUUYFDTCvQ5glT1mmIsBEZ/xfVSoruuFxutNHNfnBajv5iqwI8hB5cvdXKGHSvk2kKlC7kCXVKycjYWY42qQjGVwL5+4+yRvaJW8l+8LG9sNwabiKg2GuyQCAR6+NxxH7DOonAY4S2bnYU=
