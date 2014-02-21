@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask("server", ["express:server","watch:server"]);
     grunt.registerTask("test-server", "mochaTest");
-    grunt.registerTask("test", ["mochaTest","express:server","saucelabs-mocha"]););
+    grunt.registerTask("test", ["mochaTest","express:server","saucelabs-mocha"]);
     grunt.registerTask("test-client", ["express:server","saucelabs-mocha"]);
     grunt.registerTask("watch-test", "watch:test");
 
