@@ -43,10 +43,10 @@ module.exports = function(app) {
      * assets
      *****************/
     app.use(less({
-        src: __dirname + "/../../client/css"
+        src: __dirname + "/../../client"
     }));
     app.use(express.static(__dirname + "/../../client"));
-    app.use(express.static(__dirname + "/../../bower_components"));
+    app.use(express.static(__dirname + "/../../client/bower_components"));
 
     /*****************
      * passport
