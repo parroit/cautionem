@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="full-height">
+
+
+<head>
+    <title>Web Disk</title>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    {{{ yield-styles }}}
+</head>
+
+<body class="full-height">
+
+    {{> navbar }} 
+
+    {{{ yield }}}
+
+
+    <div class="flashes">
+        {{#errors}}
+        <div class="alert alert-danger fade in">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{.}}
+        </div>
+        {{/errors}}
+    </div>
+
+    <div id="error-template" class="hidden alert alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+    </div>
+
+    
+
+</body>
+
+
+</html>

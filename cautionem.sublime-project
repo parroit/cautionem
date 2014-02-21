@@ -3,10 +3,6 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "/media/parroit/Elements/src/billy"
-		},
-		{
-			"follow_symlinks": true,
 			"path": "."
 		}
 	]

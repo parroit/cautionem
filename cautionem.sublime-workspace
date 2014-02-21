@@ -59,6 +59,17 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "@import \"login\";\n@import \"flashes\";\n@import \"dialogs\";\n\n.navbar {\n    margin-bottom: 5px;\n}\n\n.navbar-brand {\n    padding: 8px 8px 0;\n\n    span {\n        color: #428bca;\n        font-size: 2em;   \n        text-shadow: 1px 1px 3px #214687;\n        -webkit-text-stroke: 1px #64adec; \n    }\n}\n",
+			"file": "server/client/css/index.less",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 289,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -132,6 +143,24 @@
 	},
 	"file_history":
 	[
+		"/media/parroit/Elements/src/cautionem/.gitignore",
+		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
+		"/media/parroit/Elements/src/cautionem/server/lib/app-configure.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/routes.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
+		"/media/parroit/Elements/src/cautionem/server/package.json",
+		"/media/parroit/Elements/src/cautionem/package.json",
+		"/media/parroit/Elements/src/cautionem/Gruntfile.js",
+		"/media/parroit/Elements/src/cautionem/server/views/index.html",
+		"/media/parroit/Elements/src/cautionem/server/client/css/webdisk.less",
+		"/media/parroit/Elements/src/cautionem/server/client/js/files.js",
+		"/media/parroit/Elements/src/webdisk/lib/routes.js",
+		"/media/parroit/Elements/src/cautionem/client/bower.json",
+		"/media/parroit/Elements/src/cautionem/www/app.js",
+		"/media/parroit/Elements/src/-cautionem/package.json",
+		"/media/parroit/Elements/src/cautionem/www/app/main.js",
+		"/media/parroit/Elements/src/cautionem/www/index.html",
+		"/media/parroit/Elements/src/cautionem/www/lib/jquery.js",
 		"/media/parroit/Elements/src/cautionem/tools/less/mixins.less",
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/bin/zuul",
 		"/media/parroit/Elements/src/cautionem/test/app_test.js",
@@ -141,7 +170,6 @@
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/.travis.yml",
 		"/media/parroit/Elements/src/cautionem/index.html",
 		"/media/parroit/Elements/src/cautionem/test/template.html",
-		"/media/parroit/Elements/src/cautionem/package.json",
 		"/media/parroit/Elements/src/cautionem/test/.travis.yml",
 		"/media/parroit/Elements/src/cautionem/node_modules/jam/README.md",
 		"/media/parroit/Elements/src/cautionem/jam/chai-amd/chai.js",
@@ -165,7 +193,6 @@
 		"/home/parroit/.config/sublime-text-3/Packages/User/JavaScript.sublime-settings",
 		"/home/parroit/.config/sublime-text-3/Packages/JSHint Gutter/.jshintrc",
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/examples/ember_w_qunit/templates.html",
-		"/media/parroit/Elements/src/cautionem/.gitignore",
 		"/media/parroit/Elements/src/cautionem/jam/require.config.js",
 		"/media/parroit/Elements/src/cautionem/jam/require.js",
 		"/media/parroit/Elements/src/cautionem/jam/mocha/package.json",
@@ -243,23 +270,7 @@
 		"/home/parroit/src/Abdero/abdero-fetcher/lib/abdero-fetcher.js",
 		"/home/parroit/src/Abdero/abdero-fetcher/package.json",
 		"/home/parroit/src/Abdero/abdero-server/test/imap-fetcher_test.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/docs/README.md",
-		"/home/parroit/src/Abdero/abdero-server/README.md",
-		"/home/parroit/src/Abdero/abdero-fetcher/Gruntfile.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/lib/a.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/lib/.jshintrc",
-		"/home/parroit/src/Abdero/abdero-fetcher/test/.jshintrc",
-		"/home/parroit/.config/sublime-text-3/Packages/JsFormat/JsFormat.sublime-settings",
-		"/home/parroit/src/Abdero/auth/test/.jshintrc",
-		"/home/parroit/src/Abdero/message-parser/README.md",
-		"/home/parroit/src/Abdero/auth/package.json",
-		"/media/parroit/Elements/src/Abdero/abdero-fetcher/cat",
-		"/media/parroit/Elements/src/Abdero/abdero-fetcher/ls",
-		"/usr/share/X11/xkb/symbols/it",
-		"/media/parroit/Elements/src/include-folder/package.json",
-		"/home/parroit/src/Abdero/auth/README.md",
-		"/home/parroit/src/Abdero/auth/output.md",
-		"/home/parroit/src/Abdero/auth/docs/readme.md"
+		"/home/parroit/src/Abdero/abdero-fetcher/docs/README.md"
 	],
 	"find":
 	{
@@ -280,6 +291,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"webdisk",
 			"window.j",
 			"    ",
 			"'",
@@ -372,8 +384,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "server/client/css/index.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
