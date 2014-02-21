@@ -5,3 +5,4 @@ before_script:
   - npm install -g grunt-cli
   - cd server
   - npm install
+  - cd $TRAVIS_BUILD_DIR
