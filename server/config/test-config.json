@@ -1,0 +1,14 @@
+{
+    "auth": {
+        "usersFile": "server/config/test-users.json",
+        "cookieSecret": "a secret"
+    },
+    
+    "logger": {
+        "format": ":method :url -> :status"
+    },
+
+    "sessions": {
+        "path": "server/sessions"
+    }
+}
