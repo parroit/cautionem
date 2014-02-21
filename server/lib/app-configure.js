@@ -9,7 +9,11 @@ var express = require("express"),
     SessionDiskStore = require("./session-disk-store")(express.session.Store),
     fs = require("fs"),
 
-    config = JSON.parse(fs.readFileSync(__dirname + "/../config/config.json"));
+    productionConfigFile =  __dirname + "/../config/config.json",
+    testConfigFile =  __dirname + "/../config/test-config.json",
+    configFile = fs.existsSync(productionConfigFile) ? productionConfigFile: testConfigFile,
+    configContent = fs.readFileSync(configFile,"utf8"),
+    config = JSON.parse(configContent);
 
 module.exports = function(app) {
 
