@@ -9,18 +9,37 @@ var express = require("express"),
     SessionDiskStore = require("./session-disk-store")(express.session.Store),
     fs = require("fs"),
 
-    productionConfigFile =  __dirname + "/../config/config.json",
-    testConfigFile =  __dirname + "/../config/test-config.json",
-    configFile = fs.existsSync(productionConfigFile) ? productionConfigFile: testConfigFile,
-    configContent = fs.readFileSync(configFile,"utf8"),
+    productionConfigFile = __dirname + "/../config/config.json",
+    testConfigFile = __dirname + "/../config/test-config.json",
+    configFile = fs.existsSync(productionConfigFile) ? productionConfigFile : testConfigFile,
+    configContent = fs.readFileSync(configFile, "utf8"),
     config = JSON.parse(configContent);
 
-module.exports = function(app) {
+
+configureApp.config = config;
+module.exports = configureApp;
+configurePassport() ;
+
+
+
+function configurePassport() {
+    var strategy = require("./passport-strategy.js");
+
+    passport.use(strategy);
+
+    passport.serializeUser(strategy.serialize);
+
+    passport.deserializeUser(strategy.deserialize);
+}
+
+
+function configureApp(app) {
 
     /*****************
      * view
      *****************/
     app.set("view engine", "html");
+    app.set("views", process.cwd()+"/server/views");
     app.set("layout", "layout");
     //app.enable "view cache"
     app.engine("html", hogan);
@@ -39,9 +58,9 @@ module.exports = function(app) {
         store: new SessionDiskStore(config.sessions)
     }));
     app.use(flash());
-    
 
-    
+
+
 
     /*****************
      * assets
@@ -60,22 +79,13 @@ module.exports = function(app) {
     app.use(passport.session());
 
     app.use(app.router);
-    
+
     /*****************
      * errors management
      *****************/
-    app.use( prettyErrorHandler.handleNotFound );
-    app.use( prettyErrorHandler.handleException );
+    app.use(prettyErrorHandler.handleNotFound);
+    app.use(prettyErrorHandler.handleException);
 
     app.config = config;
 };
 
-module.exports.config = config;
-
-var strategy = require("./passport-strategy.js");
-
-passport.use(strategy);
-
-passport.serializeUser(strategy.serialize);
-
-passport.deserializeUser(strategy.deserialize);

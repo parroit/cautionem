@@ -8,7 +8,9 @@ var LocalStrategy = require("passport-local").Strategy,
         onReady: function() {
             authReady = true;
         }
-    });
+    }),
+
+    strategy = new LocalStrategy(validateUser);
 
 function validateUser(username, password, done) {
     if (!authReady) {
@@ -22,7 +24,7 @@ function validateUser(username, password, done) {
 
     //success
     .then(function(user) {
-        
+
 
         if (user && user.password === password) {
             done(null, user);
@@ -41,15 +43,16 @@ function validateUser(username, password, done) {
 
 }
 
-module.exports = new LocalStrategy(validateUser);
+module.exports = strategy;
 
+strategy.storage = authStorage;
 
-module.exports.serialize = function(user, done) {
+strategy.serialize = function(user, done) {
     done(null, user.username);
 };
 
-module.exports.deserialize = function(username, done) {
-    
+strategy.deserialize = function(username, done) {
+
     authStorage.getUser(username)
         .then(function(user) {
             //success

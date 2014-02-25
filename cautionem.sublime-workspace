@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"auth",
+				"authStorage"
+			],
+			[
+				"con",
+				"configureApp"
+			],
+			[
+				"config",
+				"config"
+			],
+			[
+				"te",
+				"testConfigFile"
+			],
+			[
 				"modul",
 				"moduleName"
 			],
@@ -60,13 +76,27 @@
 	"buffers":
 	[
 		{
-			"contents": "@import \"login\";\n@import \"flashes\";\n@import \"dialogs\";\n\n.navbar {\n    margin-bottom: 5px;\n}\n\n.navbar-brand {\n    padding: 8px 8px 0;\n\n    span {\n        color: #428bca;\n        font-size: 2em;   \n        text-shadow: 1px 1px 3px #214687;\n        -webkit-text-stroke: 1px #64adec; \n    }\n}\n",
-			"file": "server/client/css/index.less",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "server/views/subscribe.html",
 			"settings":
 			{
-				"buffer_size": 289,
+				"buffer_size": 6157,
+				"line_ending": "Unix",
+				"name": "subscribe.html"
+			}
+		},
+		{
+			"file": "server/lib/auth-routes.js",
+			"settings":
+			{
+				"buffer_size": 853,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/lib/passport-strategy.js",
+			"settings":
+			{
+				"buffer_size": 1324,
 				"line_ending": "Unix"
 			}
 		}
@@ -143,14 +173,32 @@
 	},
 	"file_history":
 	[
-		"/media/parroit/Elements/src/cautionem/.gitignore",
-		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
+		"/media/parroit/Elements/src/cautionem/server/config/users.json",
 		"/media/parroit/Elements/src/cautionem/server/lib/app-configure.js",
-		"/media/parroit/Elements/src/cautionem/server/lib/routes.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
-		"/media/parroit/Elements/src/cautionem/server/package.json",
-		"/media/parroit/Elements/src/cautionem/package.json",
+		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
+		"/media/parroit/Elements/src/cautionem/client/js/subscribe.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/passport-strategy.js",
+		"/media/parroit/Elements/src/cautionem/server/node_modules/express/lib/application.js",
+		"/media/parroit/Elements/src/cautionem/.travis.yml",
+		"/media/parroit/Elements/src/cautionem/server/views/login.html",
+		"/media/parroit/Elements/src/cautionem/.gitignore",
 		"/media/parroit/Elements/src/cautionem/Gruntfile.js",
+		"/media/parroit/Elements/src/cautionem/server/config/test-config.json",
+		"/media/parroit/Elements/src/cautionem/server/config/test-users.json",
+		"/media/parroit/Elements/src/-cautionem/.travis.yml",
+		"/media/parroit/Elements/src/cautionem/package.json",
+		"/media/parroit/Elements/src/cautionem/client/test/index.html",
+		"/media/parroit/Elements/src/cautionem/server/config/config.json",
+		"/media/parroit/Elements/src/ds-site/client/favicon.ico",
+		"/media/parroit/Elements/src/cautionem/client/test/fake-test.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/server.js",
+		"/media/parroit/Elements/src/cautionem/client/css/index.less",
+		"/media/parroit/Elements/src/cautionem/server/test/auth-storage-test.js",
+		"/media/parroit/Elements/src/cautionem/server/client/css/index.less",
+		"/media/parroit/Elements/src/cautionem/server/lib/routes.js",
+		"/media/parroit/Elements/src/cautionem/server/package.json",
 		"/media/parroit/Elements/src/cautionem/server/views/index.html",
 		"/media/parroit/Elements/src/cautionem/server/client/css/webdisk.less",
 		"/media/parroit/Elements/src/cautionem/server/client/js/files.js",
@@ -165,7 +213,6 @@
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/bin/zuul",
 		"/media/parroit/Elements/src/cautionem/test/app_test.js",
 		"/media/parroit/Elements/src/cautionem/.zuul.yml",
-		"/media/parroit/Elements/src/cautionem/.travis.yml",
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/lib/zuul.js",
 		"/home/parroit/programmi/node-v0.10.24-linux-x64/lib/node_modules/zuul/.travis.yml",
 		"/media/parroit/Elements/src/cautionem/index.html",
@@ -253,28 +300,11 @@
 		"/home/parroit/src/Abdero/auth-token/docs/crypton.md",
 		"/home/parroit/src/Abdero/auth-token/test/auth-storage_test.js",
 		"/home/parroit/src/Abdero/auth-token/test/.jshintrc",
-		"/home/parroit/src/Abdero/auth-token/lib/.jshintrc",
-		"/home/parroit/src/Abdero/auth-token/.travis.yml",
-		"/home/parroit/src/Abdero/auth-token/README.md",
-		"/home/parroit/.bashrc",
-		"/home/parroit/src/Abdero/abdero-fetcher/.travis.yml",
-		"/home/parroit/src/Abdero/auth-token/docs/README.md",
-		"/home/parroit/src/Abdero/abdero-fetcher/test/abdero-fetcher_test.js",
-		"/home/parroit/src/Abdero/auth/test/auth_test.js",
-		"/home/parroit/src/Abdero/auth/lib/auth-storage.js",
-		"/home/parroit/src/Abdero/auth/lib/auth.js",
-		"/home/parroit/src/Abdero/auth-token/package.json",
-		"/home/parroit/src/Abdero/auth/docs/README.md",
-		"/home/parroit/src/Abdero/auth/test/a.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/README.md",
-		"/home/parroit/src/Abdero/abdero-fetcher/lib/abdero-fetcher.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/package.json",
-		"/home/parroit/src/Abdero/abdero-server/test/imap-fetcher_test.js",
-		"/home/parroit/src/Abdero/abdero-fetcher/docs/README.md"
+		"/home/parroit/src/Abdero/auth-token/lib/.jshintrc"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -291,6 +321,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'",
+			"_users",
+			"'",
 			"webdisk",
 			"window.j",
 			"    ",
@@ -384,16 +417,77 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/client/css/index.less",
+					"file": "server/views/subscribe.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 289,
+						"buffer_size": 6157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1205,
+								1205
+							]
+						],
+						"settings":
+						{
+							"auto_name": "subscribe.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1587.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "server/lib/auth-routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								706,
+								706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server/lib/passport-strategy.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1324,
 						"regions":
 						{
 						},
@@ -406,11 +500,11 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
+						"translation.x": -0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -480,7 +574,7 @@
 		[
 			[
 				"",
-				"~/Scrivania/src/girodelcielo/girodelcielo.sublime-project"
+				"~/Scrivania/src/ds-site/ds-site.sublime-project"
 			]
 		],
 		"width": 380.0
