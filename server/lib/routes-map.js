@@ -25,7 +25,7 @@ module.exports = function(app) {
      * auth
      */
     app.get('/login', routes.template("login"));
-    app.post('/login', authRoutes.postLogin);
+    app.post('/login', authRoutes.login);
     app.get('/subscribe', routes.template("subscribe"));
     app.post('/subscribe', authRoutes.subscribe);
     app.get('/logout', ensureAuthenticated, authRoutes.logout);

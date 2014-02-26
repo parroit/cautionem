@@ -35,5 +35,6 @@
     "grunt-express-server": "~0.4.11",
     "grunt-saucelabs": "~5.0.1"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {}
 }

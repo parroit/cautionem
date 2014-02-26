@@ -130,6 +130,26 @@ AuthStorage.prototype.getUser = function(username) {
 };
 
 /**
+ * Retrieve a user from storage by email.
+ *
+ * @param {String} email  the email of the user to retrieve
+ * @return {Object} a promise fullfilled with user object
+ * @api public
+ */
+AuthStorage.prototype.getUserByEmail= function(email) {
+    var users = this._users;
+    return new Promise(function(resolve, reject) {
+        var results = users.filter(function(u){
+            u.email === email;
+        });
+
+        resolve(results.length ? results[0] : null);
+        
+    });
+};
+
+
+/**
  * Remove a user from storage.
  *
  * @param {String} username  username of user to remove

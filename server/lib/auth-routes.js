@@ -1,37 +1,44 @@
 var passport = require("passport"),
     authStorage = require("./passport-strategy").storage;
 
-exports.postLogin = passport.authenticate("local", {
+var login = passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
 });
 
-exports.logout = function(req, res) {
+function logout(req, res) {
     req.logout();
     res.redirect("/");
 }
 
-exports.subscribe = function(req, res) {
-    
+function subscribe(req, res) {
+
     var user = req.body;
 
     authStorage.saveUser(user)
-    	.then(function(results){
-    		if (results.status == "ok") {
-                            req.flash("info", "You have successfully registered.");
-    		} else {
-                            req.flash("error", results.reason);
-    		}
+        .then(function(results) {
+            if (results.status == "ok") {
+                req.flash("info", "You have successfully registered.");
+            } else {
+                req.flash("error", results.reason);
+            }
 
-                        res.redirect("/");
-    	})
+            res.redirect("/");
+        })
 
-    	.then(null, function(err){
-    		req.flash("error", err.message);
-                        res.redirect("/subscribe");
-    	});
+    .then(null, function(err) {
+        req.flash("error", err.message);
+        res.redirect("/subscribe");
+    });
 
-    
-    
+
+
 }
+
+
+module.exports = {
+    subscribe: subscribe,
+    login: login,
+    logout: logout
+};
