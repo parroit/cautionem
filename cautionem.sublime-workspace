@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"errro",
+				"errors"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"lo",
+				"login"
+			],
+			[
 				"auth",
 				"authStorage"
 			],
@@ -76,28 +88,28 @@
 	"buffers":
 	[
 		{
-			"file": "server/views/subscribe.html",
+			"file": "server/lib/auth/user-validator.js",
 			"settings":
 			{
-				"buffer_size": 6157,
+				"buffer_size": 2274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/test/auth-storage_test.js",
+			"settings":
+			{
+				"buffer_size": 5906,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/test/user-validator_test.js",
+			"settings":
+			{
+				"buffer_size": 3041,
 				"line_ending": "Unix",
-				"name": "subscribe.html"
-			}
-		},
-		{
-			"file": "server/lib/auth-routes.js",
-			"settings":
-			{
-				"buffer_size": 853,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/lib/passport-strategy.js",
-			"settings":
-			{
-				"buffer_size": 1324,
-				"line_ending": "Unix"
+				"name": "user-validator_test.js"
 			}
 		}
 	],
@@ -173,12 +185,16 @@
 	},
 	"file_history":
 	[
+		"/media/parroit/Elements/src/cautionem/server/package.json",
+		"/media/parroit/Elements/src/cautionem/server/node_modules/validator/package.json",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
+		"/media/parroit/Elements/src/cautionem/server/views/subscribe.html",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-storage.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
 		"/media/parroit/Elements/src/cautionem/server/config/users.json",
 		"/media/parroit/Elements/src/cautionem/server/lib/app-configure.js",
-		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
 		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
 		"/media/parroit/Elements/src/cautionem/client/js/subscribe.js",
-		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/passport-strategy.js",
 		"/media/parroit/Elements/src/cautionem/server/node_modules/express/lib/application.js",
 		"/media/parroit/Elements/src/cautionem/.travis.yml",
@@ -198,7 +214,6 @@
 		"/media/parroit/Elements/src/cautionem/server/test/auth-storage-test.js",
 		"/media/parroit/Elements/src/cautionem/server/client/css/index.less",
 		"/media/parroit/Elements/src/cautionem/server/lib/routes.js",
-		"/media/parroit/Elements/src/cautionem/server/package.json",
 		"/media/parroit/Elements/src/cautionem/server/views/index.html",
 		"/media/parroit/Elements/src/cautionem/server/client/css/webdisk.less",
 		"/media/parroit/Elements/src/cautionem/server/client/js/files.js",
@@ -297,10 +312,7 @@
 		"/home/parroit/src/Abdero/auth-token/docs/auth-storage.md",
 		"/home/parroit/src/Abdero/auth-token/Gruntfile.js",
 		"/home/parroit/src/Abdero/auth-token/docs/auth.md",
-		"/home/parroit/src/Abdero/auth-token/docs/crypton.md",
-		"/home/parroit/src/Abdero/auth-token/test/auth-storage_test.js",
-		"/home/parroit/src/Abdero/auth-token/test/.jshintrc",
-		"/home/parroit/src/Abdero/auth-token/lib/.jshintrc"
+		"/home/parroit/src/Abdero/auth-token/docs/crypton.md"
 	],
 	"find":
 	{
@@ -321,6 +333,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ĕmail",
+			"__newVar__20140228184654864483",
+			"first_name",
 			"'",
 			"_users",
 			"'",
@@ -417,55 +432,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/views/subscribe.html",
+					"file": "server/lib/auth/user-validator.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6157,
+						"buffer_size": 2274,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1205,
-								1205
-							]
-						],
-						"settings":
-						{
-							"auto_name": "subscribe.html",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1587.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "server/lib/auth-routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 853,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								706,
-								706
+								1959,
+								1959
 							]
 						],
 						"settings":
@@ -475,19 +459,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1380.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "server/lib/passport-strategy.js",
+					"buffer": 1,
+					"file": "server/test/auth-storage_test.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1324,
+						"buffer_size": 5906,
 						"regions":
 						{
 						},
@@ -500,15 +484,45 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server/test/user-validator_test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3013,
+								3013
+							]
+						],
+						"settings":
+						{
+							"auto_name": "user-validator_test.js",
+							"nodePath": "/home/parroit/programmi/node-v0.10.24-linux-x64/bin/node",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2070.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -594,7 +608,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 331.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

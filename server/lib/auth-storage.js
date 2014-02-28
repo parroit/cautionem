@@ -138,12 +138,16 @@ AuthStorage.prototype.getUser = function(username) {
  */
 AuthStorage.prototype.getUserByEmail= function(email) {
     var users = this._users;
+     
     return new Promise(function(resolve, reject) {
-        var results = users.filter(function(u){
-            u.email === email;
+        Object.keys(users).forEach(function(username){
+            var user = users[username];
+            if (user.email === email) {
+                return resolve(user);       
+            }
         });
 
-        resolve(results.length ? results[0] : null);
+        resolve(null);
         
     });
 };

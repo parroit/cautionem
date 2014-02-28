@@ -87,5 +87,5 @@ function configureApp(app) {
     app.use(prettyErrorHandler.handleException);
 
     app.config = config;
-};
+} ;
 

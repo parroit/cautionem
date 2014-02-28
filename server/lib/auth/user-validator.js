@@ -1,29 +1,7 @@
 var util = require("util"),
-    validator = require("validator"),
-    authStorage = require("./passport-strategy").storage,
+    Promise = require("promise"),
+    validator = require("validator");
 
-    userValidator = {
-        username: [
-            ["alphanumeric", "Should contains only letters or numbers"],
-            ["length", 3, 15, "Should be between 3 and 15 characters length"],
-            [uniqueUsername, "This username is already taken"]
-
-        ],
-        email: [
-            ["email", "Should be a valid e-mail address"],
-            [uniqueEmail, "This e-mail address is already taken"]
-
-        ],
-        password: [
-            ["length", 6, "Should be at least 6 characters length"],
-            [equals, this.fields.password_confirmation, "Should match 'Confirm Password'"]
-
-        ],
-        t_and_c: [
-            [equals, 1, "You must check 'I Agree'"]
-        ]
-
-    };
 
 function uniqueEmail(str) {
     return authStorage.getUserByEmail(str)
@@ -39,8 +17,108 @@ function uniqueUsername(str) {
         });
 }
 
-function createValidator(validation){
+function validateUser(user, authStorage, cb) {
+    var promises = [],
+        results = {
+            errors: {
+
+            }
+        };
+
+    if (!user || typeof user !== "object" || util.isRegExp(user) || util.isArray(user)) {
+        results.errors.globals = "User should be an object!";
+        return cb(results);
+    }
+
+    if (!user.username) {
+        results.errors.username = "Username should be specified";
+    }
+
+    if (!results.errors.username && !validator.isAlphanumeric(user.username)) {
+        results.errors.username = "Should contains only letters or numbers";
+    }
+
+    if (!results.errors.username && !validator.isLength(user.username, 3, 15)) {
+
+        results.errors.username = "Should be between 3 and 15 characters length";
+    }
+
+    if (!results.errors.username) {
+        promises.push(
+            authStorage.getUser(user.username)
+            .then(function(user) {
+                
+                if (user !== null) {
+                    results.errors.username = "Username is already registered";
+                }
+                return true;
+            })
+        );
+    }
+
+    if (!user.email) {
+        results.errors.email = "Email should be specified";
+    }
+
+    if (!results.errors.email && !validator.isEmail(user.email)) {
+        results.errors.email = "Should be a valid e-mail address";
+    }
+
+    if (!results.errors.email) {
+        promises.push(
+            authStorage.getUserByEmail(user.email)
+            .then(function(user) {
+
+                
+                if (user !== null) {
+                    results.errors.email = "Email is already registered";
+                }
+                return true;
+            })
+        );
+    }
+
+    if (!user.password) {
+        results.errors.password = "Password should be specified";
+    }
+
+    if (!results.errors.password && !validator.isLength(user.password, 6)) {
+        results.errors.password = "Should be at least 6 characters length";
+    }
+
+    if (!results.errors.password && user.password != user.confirm_password) {
+        results.errors.password = "Should match 'Confirm Password'";
+    }
+
+    if (user.t_and_c !== "1") {
+        results.errors.t_and_c = "You must check 'I Agree'";
+
+    }
+
+
+
+    if (!Object.keys(results.errors).length) {
+        delete results.errors;
+    }
+
+    if (promises.length) {
+        
+        Promise.all(promises)
+            .then(function() {
+                cb(results);
+            });
+
+    } else {
+
+        process.nextTick(function() {
+            cb(results);
+        });
+
+    }
+
+
+
 
 }
 
-module.exports = createValidator(userValidator);
+module.exports = validateUser;
