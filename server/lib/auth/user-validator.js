@@ -47,7 +47,7 @@ function validateUser(user, authStorage, cb) {
         promises.push(
             authStorage.getUser(user.username)
             .then(function(user) {
-                
+
                 if (user !== null) {
                     results.errors.username = "Username is already registered";
                 }
@@ -69,7 +69,7 @@ function validateUser(user, authStorage, cb) {
             authStorage.getUserByEmail(user.email)
             .then(function(user) {
 
-                
+
                 if (user !== null) {
                     results.errors.email = "Email is already registered";
                 }
@@ -96,23 +96,22 @@ function validateUser(user, authStorage, cb) {
     }
 
 
-
-    if (!Object.keys(results.errors).length) {
-        delete results.errors;
+    function resolveValidation() {
+        
+        if (!Object.keys(results.errors).length) {
+            delete results.errors;
+        }
+        cb(results);
     }
 
     if (promises.length) {
-        
+        console.log("I Promise")
         Promise.all(promises)
-            .then(function() {
-                cb(results);
-            });
+            .then(resolveValidation);
 
     } else {
 
-        process.nextTick(function() {
-            cb(results);
-        });
+        process.nextTick(resolveValidation);
 
     }
 

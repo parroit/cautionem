@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"c",
+				"console"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"get",
+				"getUser"
+			],
+			[
 				"errro",
 				"errors"
 			],
@@ -60,10 +72,6 @@
 				"username"
 			],
 			[
-				"c",
-				"check"
-			],
-			[
 				"do",
 				"doImapAction"
 			],
@@ -88,28 +96,43 @@
 	"buffers":
 	[
 		{
+			"file": "server/views/subscribe.html",
+			"settings":
+			{
+				"buffer_size": 6350,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/css/login.less",
+			"settings":
+			{
+				"buffer_size": 1195,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/lib/auth-routes.js",
+			"settings":
+			{
+				"buffer_size": 1453,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/lib/routes.js",
+			"settings":
+			{
+				"buffer_size": 480,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "server/lib/auth/user-validator.js",
 			"settings":
 			{
-				"buffer_size": 2274,
+				"buffer_size": 2979,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/test/auth-storage_test.js",
-			"settings":
-			{
-				"buffer_size": 5906,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/test/user-validator_test.js",
-			"settings":
-			{
-				"buffer_size": 3041,
-				"line_ending": "Unix",
-				"name": "user-validator_test.js"
 			}
 		}
 	],
@@ -185,13 +208,16 @@
 	},
 	"file_history":
 	[
+		"/media/parroit/Elements/src/cautionem/server/lib/auth/user-validator.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-storage.js",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
+		"/media/parroit/Elements/src/cautionem/server/config/users.json",
+		"/media/parroit/Elements/src/cautionem/server/config/test-users.json",
+		"/media/parroit/Elements/src/cautionem/server/test/user-validator_test.js",
 		"/media/parroit/Elements/src/cautionem/server/package.json",
 		"/media/parroit/Elements/src/cautionem/server/node_modules/validator/package.json",
-		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
 		"/media/parroit/Elements/src/cautionem/server/views/subscribe.html",
-		"/media/parroit/Elements/src/cautionem/server/lib/auth-storage.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
-		"/media/parroit/Elements/src/cautionem/server/config/users.json",
 		"/media/parroit/Elements/src/cautionem/server/lib/app-configure.js",
 		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
 		"/media/parroit/Elements/src/cautionem/client/js/subscribe.js",
@@ -202,7 +228,6 @@
 		"/media/parroit/Elements/src/cautionem/.gitignore",
 		"/media/parroit/Elements/src/cautionem/Gruntfile.js",
 		"/media/parroit/Elements/src/cautionem/server/config/test-config.json",
-		"/media/parroit/Elements/src/cautionem/server/config/test-users.json",
 		"/media/parroit/Elements/src/-cautionem/.travis.yml",
 		"/media/parroit/Elements/src/cautionem/package.json",
 		"/media/parroit/Elements/src/cautionem/client/test/index.html",
@@ -310,9 +335,7 @@
 		"/home/parroit/src/Abdero/auth-token/test/crypton_test.js",
 		"/home/parroit/src/Abdero/auth-token/node_modules/grunt-markdox/tasks/markdox.js",
 		"/home/parroit/src/Abdero/auth-token/docs/auth-storage.md",
-		"/home/parroit/src/Abdero/auth-token/Gruntfile.js",
-		"/home/parroit/src/Abdero/auth-token/docs/auth.md",
-		"/home/parroit/src/Abdero/auth-token/docs/crypton.md"
+		"/home/parroit/src/Abdero/auth-token/Gruntfile.js"
 	],
 	"find":
 	{
@@ -333,6 +356,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"flash",
+			"errors",
+			"password_confirmation",
+			"passport",
 			"ĕmail",
 			"__newVar__20140228184654864483",
 			"first_name",
@@ -432,24 +459,82 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/lib/auth/user-validator.js",
+					"file": "server/views/subscribe.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2274,
+						"buffer_size": 6350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1959,
-								1959
+								2703,
+								2703
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 897.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/css/login.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1190,
+								1190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server/lib/auth-routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1167,
+								1167
 							]
 						],
 						"settings":
@@ -459,67 +544,66 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1380.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "server/test/auth-storage_test.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 5906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "server/test/user-validator_test.js",
-					"semi_transient": false,
+					"buffer": 3,
+					"file": "server/lib/routes.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3041,
+						"buffer_size": 480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3013,
-								3013
+								148,
+								148
 							]
 						],
 						"settings":
 						{
-							"auto_name": "user-validator_test.js",
-							"nodePath": "/home/parroit/programmi/node-v0.10.24-linux-x64/bin/node",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2070.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "server/lib/auth/user-validator.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2621,
+								2621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1863.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -608,7 +692,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 241.0,
+	"side_bar_width": 260.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
