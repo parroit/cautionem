@@ -33,6 +33,7 @@ module.exports = function(app) {
      */
     app.get('/bills/list', billsRoutes.listBills);
     app.get('/bills/:code', billsRoutes.editBill);
+    app.get('/bill-data/:code', billsRoutes.bill);
     
 
 }

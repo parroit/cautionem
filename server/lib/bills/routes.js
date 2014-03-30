@@ -44,10 +44,22 @@ function listBills(req, res) {
 
 }
 
+function bill(req, res) {
+    function renderJSON(bill) {
+        
+        res.json(bill);
+    }
+
+
+    var code = req.param("code");
+    billsStorage
+        .fatture.byCode(code)
+        .then(renderJSON)
+        .then(null, catchErr(res));
+}
 
 function editBill(req, res) {
     var code = req.param("code");
-    console.dir(code)
 
     function renderBill(model) {
         
@@ -120,5 +132,6 @@ function editBill(req, res) {
 
 module.exports = {
     listBills: listBills,
-    editBill: editBill
+    editBill: editBill,
+    bill: bill
 }
