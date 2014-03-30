@@ -1,7 +1,7 @@
 var assert = require("assert"),
     expect = require("expect.js"),
     moment = require('moment'),
-    enhanceFattura = require("../../lib/model/enhance-fattura"),
+    enhanceFattura = require("../../lib/isomorphic/model/enhance-fattura"),
     _ = require("lodash"),
     factory = require("../../lib/model/Fattura");
 

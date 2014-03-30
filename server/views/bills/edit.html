@@ -325,3 +325,14 @@
         </tbody>
     </table>
 </article>
+
+
+
+{{#yield-scripts}}
+  <script src="/js/module-config.js"></script>
+  <script 
+    data-main="/js/edit-bill-starter" 
+    src="/requirejs/require.js">
+  </script>
+
+{{/yield-scripts}}

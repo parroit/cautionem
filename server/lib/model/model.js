@@ -11,8 +11,8 @@
 module.exports = {
     articoloIva:require("./ArticoliIva"),
     cliente:require("./Cliente"),
-    enhanceFattura:require("./enhance-fattura"),
-    enhanceRigaFattura:require("./enhance-rigafattura"),
+    enhanceFattura:require("../isomorphic/model/enhance-fattura"),
+    enhanceRigaFattura:require("../isomorphic/model/enhance-rigafattura"),
     fattura:require("./Fattura.js"),
     rigaFattura:require("./RigaFattura.js"),
     tipiPagamento:require("./TipiPagamento.js")

@@ -71,6 +71,7 @@ function configureApp(app) {
     app.use(less({
         src: __dirname + "/../../client"
     }));
+    app.use(express.static(__dirname + "/isomorphic"));
     app.use(express.static(__dirname + "/../../client"));
     app.use(express.static(__dirname + "/../../client/bower_components"));
 

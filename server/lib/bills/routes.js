@@ -1,5 +1,5 @@
 var model = require("../model/model"),
-    enhanceFattura = require("../model/enhance-fattura"),
+    enhanceFattura = require("../isomorphic/model/enhance-fattura"),
     baseRoutes = require("../base-routes"),
     Promise = require("promise"),
     moment = require("moment"),

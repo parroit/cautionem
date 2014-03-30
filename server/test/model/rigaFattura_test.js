@@ -1,7 +1,7 @@
 var assert = require("assert"),
     expect = require("expect.js"),
     _ = require("lodash"),
-    enhanceRiga = require("../../lib/model/enhance-rigafattura.js"),
+    enhanceRiga = require("../../lib/isomorphic/model/enhance-rigafattura.js"),
     rigaFattura = require("../../lib/model/RigaFattura"),
 
     datiRiga = {
