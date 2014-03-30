@@ -1,0 +1,98 @@
+header.fatture {
+  padding: 2px;
+  border-radius: 5px;
+  background: rgba(108, 108, 108, 0.02);
+
+  .make-row;
+
+  > div#pagination {
+    .columns(4,4,5,6);
+    min-width: 290px;
+  }
+  > div.search {
+    .columns(6,6,5,4);
+
+    form {
+      &:extend(.form-inline all, .pull-right all);
+      margin-right: -30px;
+
+      > div {
+        &:extend(.form-group all);
+        .columns(8);
+
+        input {
+          &:extend(.form-control all);
+          min-width: 90px;
+        }
+
+      }
+
+      > button {
+        .button-primary(@search);
+
+        .columns(4);
+
+      }
+    }
+  }
+  > div.actions {
+    .columns(2);
+    margin-left: -15px;
+    #nuova-fattura {
+      .button-primary(@plus);
+
+    }
+  }
+
+}
+
+article.fatture {
+  .make-row;
+  > div {
+
+    table {
+      &:extend(.table all,.table-curved all,.table-condensed  all,.table-hover  all,.table-striped all)
+    ;
+      th {
+
+        background: white;
+      }
+      td {
+        div.actions {
+          width: 150px;
+
+          @media (min-width: @screen-sm-min) {
+            width: 300px;
+          }
+
+          /* Medium devices (desktops, 992px and up) */
+          @media (min-width: @screen-md-min) {
+            width: 300px;
+          }
+
+          /* Large devices (large desktops, 1200px and up) */
+          @media (min-width: @screen-lg-min) {
+            width: 300px;
+          }
+
+          a.edit {
+            .button-primary(@edit,1);
+
+          }
+
+          a.delete {
+            .button-danger(@minus,1);
+
+          }
+
+          a.print {
+            .button-default(@print,1);
+
+          }
+
+        }
+      }
+    }
+  }
+
+}

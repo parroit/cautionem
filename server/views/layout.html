@@ -7,16 +7,16 @@
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    {{{ yield-styles }}}
+    <link rel="stylesheet" href="/css/index.css" />{{{ yield-styles }}}
 </head>
+
 
 <body class="full-height">
 
-    {{> navbar }} 
-
-    {{{ yield }}}
-
+    {{> navbar }}
+    <section id="content">
+        {{{ yield }}}
+    </section>
 
     <div class="flashes">
         {{#errors}}

@@ -13,12 +13,15 @@ var express = require("express"),
     testConfigFile = __dirname + "/../config/test-config.json",
     configFile = fs.existsSync(productionConfigFile) ? productionConfigFile : testConfigFile,
     configContent = fs.readFileSync(configFile, "utf8"),
+    initStorage = require("./bills/initStorage"),
     config = JSON.parse(configContent);
 
 
 configureApp.config = config;
 module.exports = configureApp;
+
 configurePassport() ;
+initStorage(config);
 
 
 

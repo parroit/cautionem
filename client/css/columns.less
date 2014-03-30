@@ -1,0 +1,28 @@
+.columns(@lg,@md:@lg,@sm:@md,@xs:@sm){
+  .make-lg-column(@lg);
+  .make-md-column(@md);
+  .make-sm-column(@sm);
+  .make-xs-column(@xs);
+}
+
+.half {
+  .columns(6);
+}
+
+
+.whole {
+  .columns(12);
+}
+
+.third {
+  .columns(4);
+}
+
+.quarter {
+  .columns(3);
+}
+
+
+.sixth {
+  .columns(2);
+}

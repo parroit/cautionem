@@ -1,0 +1,96 @@
+<header class="fatture">
+
+    <div class="actions">
+        <a id="nuova-fattura">
+            <span class="icon"></span>
+            <span class="text">Nuova fattura</span>
+        </a>
+    </div>
+
+    
+
+    <div class="search">
+
+        <form id="search">
+            <div>
+                <!--suppress HtmlFormInputWithoutLabel -->
+                <input type="number" id="search-filter" value="{year}">
+
+            </div>
+            <button  type="submit">
+                <span class="icon"></span>
+                <span class="text">Search</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</header>
+
+
+<article class="fatture">
+    <div>
+        <table id="table-fatture">
+            <thead>
+                <tr>
+
+                    <th><a href = "#" data-property="codice">Codice</a></th>
+                    <th><a href = "#" data-property="descrizione" >Descrizione</a></th>
+                    <th><a href = "#" data-property="data" >Data</a></th>
+                    <th><a href = "#" data-property="cliente" >Cliente</a></th>
+
+                    <th>&nbsp;</th>
+
+                </tr>
+
+
+            </thead>
+
+            <tbody>
+                {{# bills }}
+                	<tr>
+		    <td>
+		    	{{ codice }}
+		    </td>
+		    <td>
+		    	{{ descrizione }}
+		    </td>
+		    <td>
+		    	{{ data }}
+		    </td>
+		    <td>
+		    	{{ cliente }}
+		    </td>
+
+		    <td>
+		        <div class="actions">
+		            <a class="edit" href="{{ editUrl }}">
+		                <span class="icon"></span>
+		                <span class="text">Edit</span>
+		            </a>
+
+
+		            <a class="delete">
+		                <span class="icon"></span>
+		                <span class="text">Cancella</span>
+
+		            </a>
+
+		            <a class="print">
+		                <span class="icon"></span>
+		                <span class="text">Stampa</span>
+
+		            </a>
+
+
+		        </div>
+		    </td>
+		</tr>
+                {{/ bills }}
+
+            </tbody>
+        </table>
+    </div>
+</article>
+

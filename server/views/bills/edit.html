@@ -1,0 +1,327 @@
+<header class="edit-fattura">
+    <div class="actions">
+
+        <a id="save">
+            <span class="icon"></span>
+            <span class="text">Salva fattura</span>
+        </a>
+
+        <a id="print">
+            <span class="icon"></span>
+            <span class="text">Stampa</span>
+        </a>
+
+        <a id="cancel" href="/bills/list">
+            <span class="icon"></span>
+            <span class="text">Annulla</span>
+        </a>
+    </div>
+</header>
+
+
+<article class="edit-fattura head">
+
+    <form id="form-fattura" role="form">
+        <div class="row">
+            <div class="half">
+                <section>
+                    <label for="formattedCode">Numero</label>
+
+
+                    <input type="text" id="formattedCode" value="{{ bill.formattedCode }}">
+
+
+                </section>
+
+                <section>
+                    <label for="description">Descrizione</label>
+
+
+                    <input type="text" id="description" value="{{ bill.description }}">
+
+                </section>
+            </div>
+
+            <div class="half">
+                <section>
+                    <label for="date">Data</label>
+
+
+                    <input type="date" id="date" value="{{ bill.dateFt }}">
+
+                </section>
+
+                <section>
+                    <label for="scadenza">Scadenza</label>
+
+
+                    <input readonly 
+                        type="date" 
+                        id="scadenza" 
+                        value="{{ bill.scadenzaFt }}">
+
+                </section>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="half">
+
+            </div>
+            <div class="half">
+                <section>
+                    <label for="scelta-pagamento">Pagamento</label>
+
+                    <div class="scelta-pagamento">
+
+                        <select id="scelta-pagamento">
+                            {{# pagamenti}}
+                            
+                            <option 
+                                {{# isCurrent}}    
+                                selected
+                                {{/ isCurrent}}    
+                                value="{{ . }}">
+                                {{ description }}
+                            </option>
+                            {{/ pagamenti}}
+                        </select>
+                    </div>
+
+
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="half">
+
+                <section>
+                    <label for="scelta-cliente">Cliente</label>
+
+                    <div class="scelta-cliente">
+                        <span>
+                            <button type="button">
+                                <span class="icon">
+                                </span>
+                            </button>
+                        </span>
+                        <select id="scelta-cliente">
+                            {{# clienti}}
+                            
+                            <option 
+                                {{# isCurrent}}    
+                                selected
+                                {{/ isCurrent}}    
+                                value="{{ . }}">
+                                {{ description }}
+                            </option>
+                            {{/ clienti}}
+                        </select>
+                    </div>
+
+
+                </section>
+
+
+            </div>
+            <div class="half">
+                <section>
+                    <label for="scelta-articoloIva">Articolo IVA</label>
+
+                    <div class="scelta-articoloIva">
+
+                        <select id="scelta-articoloIva">
+                             {{# articoliIva}}
+                            
+                            <option 
+                                {{# isCurrent}}    
+                                selected
+                                {{/ isCurrent}}    
+                                value="{{ . }}">
+                                {{ description }}
+                            </option>
+                            {{/ articoliIva}}
+                        </select>
+                    </div>
+
+
+                </section>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="cliente-details hidden">
+                {{# bill.cliente }}
+                <header class="panel-heading">Dettaglio cliente</header>
+                <article>
+                    <div class="half">
+                        <section>
+                            <label for="description">Descrizione</label>
+                            <input 
+                                type="text" 
+                                id="description" 
+                                value="{{ description }}">
+                        </section>
+                        <section>
+                            <label for="secondaDescrizione">&nbsp;</label>
+                            <input 
+                                type="text" 
+                                id="secondaDescrizione" 
+                                value="{{ secondaDescrizione }}">
+                        </section>
+
+                        <section>
+                            <label for="partitaIva">Partita Iva</label>
+                            <input 
+                                type="text" 
+                                id="partitaIva" 
+                                value="{{ partitaIva }}">
+                        </section>
+                        <section>
+                            <label for="codiceFiscale">Codice Fiscale</label>
+                            <input 
+                                type="text" 
+                                id="codiceFiscale" 
+                                value="{{ codiceFiscale }}">
+                        </section>
+
+
+                    </div>
+                    <div class="half">
+                        <section>
+                            <label for="indirizzo">Indirizzo</label>
+                            <input 
+                                type="text" 
+                                id="indirizzo" 
+                                value="{{ indirizzo }}">
+                        </section>
+                        <section>
+                            <label for="cap">C.A.P.</label>
+                            <input 
+                                type="text" 
+                                id="cap" 
+                                value="{{ cap }}">
+                        </section>
+                        <section>
+                            <label for="comune">Comune</label>
+                            <input 
+                                type="text" 
+                                id="comune" 
+                                value="{{ comune }}">
+                        </section>
+                        <section>
+                            <label for="provincia">Provincia</label>
+                            <input 
+                                type="text" 
+                                id="provincia" 
+                                value="{{ provincia }}">
+                        </section>
+
+                    </div>
+                </article>
+                {{/ bill.cliente}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="third">
+                <section>
+                    <label for="imponibile" class="col-md-3 control-label">Imponibile</label>
+
+                    <input readonly type="number" id="imponibile" value="{{ bill.imponibile }}">
+
+                </section>
+            </div>
+
+            <div class="third">
+                <section>
+                    <label for="iva">IVA</label>
+
+
+                    <input readonly type="number" id="iva" value="{{ bill.iva }}">
+
+                </section>
+            </div>
+
+            <div class="third">
+                <section>
+                    <label for="totale">Totale</label>
+
+
+                    <input readonly type="number" id="totale" value="{{ bill.totale }}">
+
+                </section>
+            </div>
+        </div>
+    </form>
+
+</article>
+
+<header class="edit-fattura-rows">
+    <div class="actions">
+
+        <a id="new-row">
+            <span class="icon"></span>
+            <span class="text">Nuova riga</span>
+        </a>
+
+    </div>
+</header>
+
+<article class="edit-fattura rows">
+    <table id="table-fatture">
+        <thead>
+        <tr>
+
+            <th><a href="#" data-property="posizione">Posizione</a></th>
+            <th><a href="#" data-property="descrizione">Descrizione</a></th>
+            <th><a href="#" data-property="prezzo">Prezzo</a></th>
+            <th><a href="#" data-property="quantita">Quantità</a></th>
+            <th><a href="#" data-property="total">Totale</a></th>
+
+            <th>&nbsp;</th>
+
+        </tr>
+
+
+        </thead>
+
+        <tbody>
+        {{# bill.righe }}
+        <!--suppress HtmlFormInputWithoutLabel -->
+        <tr class ="riga-ft" id="riga-{{ numeroRiga }}">
+
+            <td class="numeroRiga">
+                {{ numeroRiga }}
+            </td>
+            <td class="description">
+                <input id="description" type="text" value="{{ description }}">
+            </td>
+            <td class="prezzoCadauno">
+                <input id="prezzoCadauno" type="number" value="{{ prezzoCadauno }}">
+            </td>
+            <td class="quantita">
+                <input id="quantita" type="number" value="{{ quantita }}">
+            </td>
+            <td class="total">
+                <input readonly id="total" type="number" value="{{ total }}">
+            </td>
+
+            <td class="actions">
+                <div class="actions">
+                    <a class="delete">
+                        <span class="icon"></span>
+                        <span class="text">Cancella</span>
+                    </a>
+
+                </div>
+            </td>
+
+        </tr>
+        {{/ bill.righe }}
+
+        </tbody>
+    </table>
+</article>

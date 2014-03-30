@@ -1,0 +1,154 @@
+header.edit-fattura {
+  padding: 2px;
+  border-radius: 5px;
+  background: rgba(108,108,108,0.02);
+
+  .space-below;
+  .make-row;
+
+
+  .actions{
+
+    #save {
+      .button-success(@floppy-disk,1);
+    }
+
+    #cancel {
+      .button-warning(@remove,1);
+    }
+
+    #print {
+      .button-default(@print,1);
+    }
+
+  }
+
+
+}
+
+header.edit-fattura-rows {
+  padding: 2px;
+  border-radius: 5px;
+  background: rgba(108,108,108,0.02);
+
+  .space-below;
+  .make-row;
+
+  .actions{
+
+    #new-row {
+      .button-primary(@plus,1);
+    }
+
+
+  }
+}
+
+
+article.edit-fattura.head{
+  .make-row;
+
+  border: 1px solid #6CA0D8;
+  padding-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: rgba(108,160,216,0.2);
+
+  #form-fattura {
+
+    .make-form;
+    .columns(12);
+    .scelta-cliente{
+      &:extend(.input-group all);
+      span {
+
+        button {
+          .button-primary(@eye-open);
+        }
+
+      }
+    }
+    .cliente-details{
+
+
+
+      //.columns(12);
+
+      &:extend(.panel all,.panel-primary all);
+
+      header {
+        &:extend(.panel-heading all);
+      }
+      article {
+        &:extend(.panel-body all);
+      }
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 5px;
+      margin-right: 5px;
+      width:98%;
+    }
+
+  }
+}
+article.edit-fattura.rows{
+  .make-row;
+  table {
+
+    &:extend(.table all,.table-curved all,.table-condensed  all,.table-hover  all,.table-striped all);
+    th {
+      background: white;
+    }
+
+    td.numeroRiga {
+      min-width: 70px;
+    }
+    td.description {
+      width: 100%;
+    }
+    td.prezzoCadauno {
+      min-width: 90px;
+    }
+    td.quantita {
+      min-width: 90px;
+    }
+    td.total {
+      min-width: 90px;
+    }
+
+    td.actions {
+      min-width: 80px;
+
+      @media (min-width: @screen-sm-min) {
+        min-width:120px;
+      }
+
+      /* Medium devices (desktops, 992px and up) */
+      @media (min-width: @screen-md-min) {
+        min-width:120px;
+      }
+
+      /* Large devices (large desktops, 1200px and up) */
+      @media (min-width: @screen-lg-min) {
+        min-width:120px;
+      }
+    }
+  }
+  div.actions {
+
+
+    a.edit {
+      .button-primary(@edit,1);
+
+    }
+
+    a.delete {
+      .button-danger(@minus,1);
+
+    }
+
+
+
+
+  }
+}

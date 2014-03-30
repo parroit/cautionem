@@ -10,5 +10,11 @@
 
     "sessions": {
         "path": "server/sessions"
+    },
+
+     "couch": {
+        "db": "http://localhost/test-billy",
+        "user": "bill",
+        "password": "fatture.2014"
     }
 }

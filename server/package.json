@@ -36,6 +36,10 @@
     "passport-local": "~0.1.6",
     "connect-flash": "~0.1.1",
     "pretty-error": "~0.1.16",
-    "validator": "~3.3.0"
+    "validator": "~3.3.0",
+    "lodash": "~2.4.1",
+    "ngoose": "~0.4.0",
+    "moment": "~2.5.1",
+    "couch-promise": "~0.3.0"
   }
 }

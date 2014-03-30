@@ -1,0 +1,37 @@
+body {
+  background: #f0f0f0;
+
+  > nav {
+    &:extend(.navbar);
+
+    &:extend(.navbar-default all);
+    #menu {
+
+      &:extend(.navbar-collapse all);
+
+      ul {
+        &:extend(.nav all, .navbar-nav all);
+      }
+    }
+    #menu-mobile {
+      &:extend(.navbar-header all);
+
+      button {
+        &:extend(.navbar-toggle all);
+        span {
+          &:extend(.glyphicon all, .glyphicon-align-justify all);
+        }
+
+      }
+
+      a {
+        &:extend(.navbar-brand all);
+      }
+    }
+  }
+}
+
+#content {
+  padding: 0 20px;
+
+}

@@ -1,0 +1,23 @@
+.make-form{
+  &:extend(.form-horizontal all);
+
+  label{
+    &:extend(.control-label all);
+    .columns(1,2,3,4);
+  }
+
+  input,select,textarea {
+    &:extend(.form-control all);
+    .columns(11,10,9,8);
+  }
+
+  input[type=checkbox]{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  section {
+    &:extend(.form-group all);
+    overflow: hidden;
+  }
+}
+

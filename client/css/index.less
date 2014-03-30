@@ -1,6 +1,20 @@
+@import "../bower_components/bootstrap/less/bootstrap";
+@import "../bower_components/bootstrap/less/theme";
+@import "buttons";
+@import "columns";
+@import "forms";
+@import "utils";
+@import "table";
+
+@import "container";
+@import "fatture-list";
+@import "edit-fattura";
+@import "pagination";
 @import "login";
 @import "flashes";
 @import "dialogs";
+
+@icon-font-path : "/bower_components/bootstrap/fonts/";
 
 .navbar {
     margin-bottom: 5px;
@@ -15,4 +29,29 @@
         text-shadow: 1px 1px 3px #214687;
         -webkit-text-stroke: 1px #64adec; 
     }
+}
+
+.pagination{
+    margin:0;
+}
+
+@media (min-width: 768px) {
+    span.hidden-xs {
+        display: inline!important;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-inline .form-group {
+        display: inline-block;
+    }
+}
+
+
+.riga-ft input{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
 }

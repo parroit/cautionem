@@ -96,43 +96,19 @@
 	"buffers":
 	[
 		{
-			"file": "server/views/subscribe.html",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 6350,
+				"buffer_size": 904,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "client/css/login.less",
+			"file": "/media/parroit/Elements/src/billy/app/server/test/storage/fatture_test.js",
 			"settings":
 			{
-				"buffer_size": 1195,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/lib/auth-routes.js",
-			"settings":
-			{
-				"buffer_size": 1453,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/lib/routes.js",
-			"settings":
-			{
-				"buffer_size": 480,
+				"buffer_size": 6617,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "server/lib/auth/user-validator.js",
-			"settings":
-			{
-				"buffer_size": 2979,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -208,15 +184,16 @@
 	},
 	"file_history":
 	[
+		"/media/parroit/Elements/src/cautionem/server/views/subscribe.html",
+		"/media/parroit/Elements/src/cautionem/client/css/login.less",
+		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/auth/user-validator.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/auth-storage.js",
-		"/media/parroit/Elements/src/cautionem/server/lib/auth-routes.js",
 		"/media/parroit/Elements/src/cautionem/server/config/users.json",
 		"/media/parroit/Elements/src/cautionem/server/config/test-users.json",
 		"/media/parroit/Elements/src/cautionem/server/test/user-validator_test.js",
 		"/media/parroit/Elements/src/cautionem/server/package.json",
 		"/media/parroit/Elements/src/cautionem/server/node_modules/validator/package.json",
-		"/media/parroit/Elements/src/cautionem/server/views/subscribe.html",
 		"/media/parroit/Elements/src/cautionem/server/lib/routes-map.js",
 		"/media/parroit/Elements/src/cautionem/server/lib/app-configure.js",
 		"/media/parroit/Elements/src/cautionem/server/views/layout.html",
@@ -334,8 +311,7 @@
 		"/home/parroit/src/Abdero/auth-token/lib/auth.js",
 		"/home/parroit/src/Abdero/auth-token/test/crypton_test.js",
 		"/home/parroit/src/Abdero/auth-token/node_modules/grunt-markdox/tasks/markdox.js",
-		"/home/parroit/src/Abdero/auth-token/docs/auth-storage.md",
-		"/home/parroit/src/Abdero/auth-token/Gruntfile.js"
+		"/home/parroit/src/Abdero/auth-token/docs/auth-storage.md"
 	],
 	"find":
 	{
@@ -459,141 +435,54 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/views/subscribe.html",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6350,
+						"buffer_size": 904,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2703,
-								2703
+								862,
+								862
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 897.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "client/css/login.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1190,
-								1190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "server/lib/auth-routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1453,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1167,
-								1167
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 483.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/lib/routes.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 480,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								148,
-								148
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 158.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "server/lib/auth/user-validator.js",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "/media/parroit/Elements/src/billy/app/server/test/storage/fatture_test.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2979,
+						"buffer_size": 6617,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2621,
-								2621
+								0,
+								0
 							]
 						],
 						"settings":
@@ -602,11 +491,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 1863.0,
+						"translation.x": -0.0,
+						"translation.y": 6192.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

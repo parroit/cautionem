@@ -150,7 +150,7 @@ describe("AuthStorage", function() {
         );
     });
 
-    describe("Whell formed user", function() {
+    describe("Well formed user", function() {
         var results;
         
         before(function(done) {
