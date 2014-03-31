@@ -4,7 +4,7 @@ var thirdPartyConfig = {
     "eventEmitter": "/eventEmitter/EventEmitter",
     "expect": "/expect",
     "hasher": "/hasher/dist/js/hasher",
-    "hogan": "/hogan/lib/hogan",
+    "hogan": "/hogan/dist/hogan-3.0.0.amd",
     "js-signals": "/js-signals/dist/signals",
     "jquery": "/jquery/dist/jquery",
     "mocha": "/mocha/mocha",

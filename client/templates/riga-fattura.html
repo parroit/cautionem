@@ -1,0 +1,30 @@
+<!--suppress HtmlFormInputWithoutLabel -->
+<tr class ="riga-ft" id="riga-{{ numeroRiga }}">
+
+    <td class="numeroRiga">
+        {{ numeroRiga }}
+    </td>
+    <td class="description">
+        <input id="description" type="text" value="{{ description }}">
+    </td>
+    <td class="prezzoCadauno">
+        <input id="prezzoCadauno" type="number" value="{{ prezzoCadauno }}">
+    </td>
+    <td class="quantita">
+        <input id="quantita" type="number" value="{{ quantita }}">
+    </td>
+    <td class="total">
+        <input readonly id="total" type="number" value="{{ total }}">
+    </td>
+
+    <td class="actions">
+        <div class="actions">
+            <a class="delete">
+                <span class="icon"></span>
+                <span class="text">Cancella</span>
+            </a>
+
+        </div>
+    </td>
+
+</tr>

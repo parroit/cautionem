@@ -49,6 +49,8 @@ function defineModule(moment, enhanceRiga, _) {
         return dati;
     }
 
+    enhanceFattura.riga = enhanceRiga;
+
     return enhanceFattura;
 }
 

@@ -58,6 +58,34 @@ function bill(req, res) {
         .then(null, catchErr(res));
 }
 
+
+function saveBill(req, res) {
+    var bill = req.body;
+
+    function renderJSON() {
+        
+        res.json({
+            ok: true
+        });
+    }
+
+    function failure(err) {
+        res.emit("error", err);
+        res.json({
+            ok: false,
+            reason: err.message
+        });
+    }
+    
+    //console.dir(bill)
+    //return renderJSON();
+    
+    billsStorage
+        .fatture.save(bill)
+        .then(renderJSON)
+        .then(null, failure);
+}
+
 function editBill(req, res) {
     var code = req.param("code");
 
@@ -133,5 +161,6 @@ function editBill(req, res) {
 module.exports = {
     listBills: listBills,
     editBill: editBill,
-    bill: bill
+    bill: bill,
+    saveBill: saveBill
 }
