@@ -16,6 +16,11 @@
             <span class="text">Stampa nuovo formato</span>
         </a>
 
+        <a id="print" href="{{ bill.printUrlProforma }}" target="_blank" >
+            <span class="icon"></span>
+            <span class="text">Stampa pro-forma</span>
+        </a>
+
         <a id="cancel" href="/bills/list">
             <span class="icon"></span>
             <span class="text">Chiudi</span>
@@ -87,6 +92,14 @@
                         {{# bill.applicaRitenutaAcconto}}
                         checked
                         {{/ bill.applicaRitenutaAcconto}}
+                    >
+
+                     <label for="proForma">Pro forma</label>
+                    <input 
+                        type="checkbox" id="proForma"
+                        {{# bill.proForma}}
+                        checked
+                        {{/ bill.proForma}}
                     >
             </div>
             <div class="half">

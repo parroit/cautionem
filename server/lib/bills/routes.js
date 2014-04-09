@@ -49,7 +49,8 @@ function bill(req, res) {
   function renderJSON(bill) {
     bill.applicaRivalsaInps = bill.applicaRivalsaInps || false;
     bill.applicaRitenutaAcconto = bill.applicaRitenutaAcconto || false;
-    //console.dir (bill);
+    bill.proForma = bill.proForma || false;
+    
     res.json(bill);
   }
 
@@ -124,6 +125,7 @@ function enhanceLookups(model) {
     
     ft.printUrl = "/bills/pdf-print/" + encodeURIComponent(ft.formattedCode);
     ft.printUrlNewFormat = "/bills/pdf-print-new-format/" + encodeURIComponent(ft.formattedCode);
+    ft.printUrlProforma = "/bills/pdf-print-proforma/" + encodeURIComponent(ft.formattedCode);
     ft.dateFt = moment(Number(ft.date)).format("YYYY-MM-DD");
 
     ft.scadenzaFt = moment(ft.scadenza).format("YYYY-MM-DD");
@@ -189,6 +191,14 @@ function pdfPrintBill(req, res) {
 }
 
 
+function pdfPrintBillProforma(req, res) {
+  var code = encodeURIComponent(req.param("code"));
+
+  baseRoutes.pdf("/bills/print-proforma/"+code,req, res);
+
+}
+
+
 function pdfPrintBillNewFormat(req, res) {
   var code = encodeURIComponent(req.param("code"));
 
@@ -206,6 +216,12 @@ function printBill(req, res) {
 
 function printBillNewFormat(req, res) {
   printGenericBill(req,res,"bills/print-new-format");
+
+}
+
+
+function printBillProforma(req, res) {
+  printGenericBill(req,res,"bills/print-proforma");
 
 }
 
@@ -303,5 +319,7 @@ module.exports = {
   printBillNewFormat: printBillNewFormat,
   pdfPrintBill: pdfPrintBill,
   pdfPrintBillNewFormat: pdfPrintBillNewFormat,
-  cliente: cliente
+  cliente: cliente,
+  printBillProforma: printBillProforma,
+  pdfPrintBillProforma: pdfPrintBillProforma
 }

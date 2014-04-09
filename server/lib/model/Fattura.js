@@ -16,7 +16,8 @@ module.exports = model({
     righe: [rigaFattura],
     type: [String,"fattura"],
     applicaRivalsaInps: Boolean,
-    applicaRitenutaAcconto: Boolean
+    applicaRitenutaAcconto: Boolean,
+    proForma: Boolean
 
 
 });
