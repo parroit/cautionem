@@ -14,8 +14,20 @@ function defineModule(moment, enhanceRiga, _) {
            enhanceRiga(riga);
         });
 
+        define(dati, "rivalsaInps", function(){
+            return this.applicaRivalsaInps 
+                ? this.imponibileBase * 4 / 100
+                : 0;
+        });
+
+        define(dati, "ritenutaAcconto", function(){
+            return this.applicaRitenutaAcconto 
+                ? this.imponibile * 20 / 100
+                : 0;
+        });
+
         define(dati, "scadenza", function () {
-            var dataFt = moment(this.date);
+            var dataFt = moment(Number(this.date));
             if (this.pagamento.fineMese) {
                 dataFt.endOf('month');
             }
@@ -25,7 +37,7 @@ function defineModule(moment, enhanceRiga, _) {
 
         });
 
-        define(dati, "imponibile", function () {
+        define(dati, "imponibileBase", function () {
             return _(this.righe).map(function (r) {
                 return r.total
             })
@@ -37,13 +49,20 @@ function defineModule(moment, enhanceRiga, _) {
 
         });
 
+
+        define(dati, "imponibile", function () {
+            return this.imponibileBase + this.rivalsaInps;
+
+
+        });
+
         define(dati, "iva", function () {
             return this.imponibile * this.articoloIva.percentuale / 100;
 
         });
 
         define(dati, "totale", function () {
-            return this.imponibile + this.iva;
+            return this.imponibile + this.iva - this.ritenutaAcconto;
 
         });
         return dati;

@@ -32,7 +32,10 @@ module.exports = function(app) {
      * bills
      */
     app.get('/bills/list', billsRoutes.listBills);
+    app.get('/cliente/:codicefiscale', billsRoutes.cliente);
     app.get('/bills/:code', billsRoutes.editBill);
+    app.get('/bills/print/:code', billsRoutes.printBill);
+    app.get('/bills-new', billsRoutes.newBill);
     app.get('/bill-data/:code', billsRoutes.bill);
     app.post('/bill-data/:code', billsRoutes.saveBill);
     

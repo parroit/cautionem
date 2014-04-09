@@ -40,6 +40,7 @@
     "lodash": "~2.4.1",
     "ngoose": "~0.4.0",
     "moment": "~2.5.1",
-    "couch-promise": "~0.3.0"
+    "couch-promise": "~0.3.0",
+    "accounting": "~0.3.2"
   }
 }

@@ -14,7 +14,10 @@ module.exports = model({
     description: String,
     pagamento: tipoPagamento,
     righe: [rigaFattura],
-    type: [String,"fattura"]
+    type: [String,"fattura"],
+    applicaRivalsaInps: Boolean,
+    applicaRitenutaAcconto: Boolean
+
 
 });
 
