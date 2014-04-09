@@ -18,12 +18,31 @@ define(["telescope/telescope", "eventEmitter","/model/enhance-fattura.js"],
         };
         _this.righe.init(fattura.righe);
         _this.righe.events.on('changed', function() {
-            _this.events.emit('changed', 'imponibile', _this.imponibile);
+            _this.events.emit('changed', 'imponibileBase', _this.imponibileBase);
 
         });
 
         _this.events.on('changed', function(propertyName) {
+            
+            
+
+            if (propertyName == 'applicaRitenutaAcconto') {
+               _this.events.emit('changed', 'ritenutaAcconto', _this.ritenutaAcconto);
+
+                
+                _this.events.emit('changed', 'totale', _this.totale);
+                
+            }
+
+            if (propertyName == 'imponibileBase' || propertyName == 'applicaRivalsaInps') {
+                _this.events.emit('changed', 'rivalsaInps', _this.rivalsaInps);
+                _this.events.emit('changed', 'imponibile', _this.imponibile);
+                
+            }
+
             if (propertyName == 'imponibile' || propertyName == 'articoloIva') {
+                _this.events.emit('changed', 'ritenutaAcconto', _this.ritenutaAcconto);
+
                 _this.events.emit('changed', 'iva', _this.iva);
                 _this.events.emit('changed', 'totale', _this.totale);
             }
@@ -62,7 +81,7 @@ define(["telescope/telescope", "eventEmitter","/model/enhance-fattura.js"],
                 _this.events.emit('changed', 'total', _this.total);
 
             } else if (propertyName == 'total') {
-                ft.events.emit('changed', 'imponibile', ft.imponibile);
+                ft.events.emit('changed', 'imponibileBase', ft.imponibile);
             }
         });
     }
