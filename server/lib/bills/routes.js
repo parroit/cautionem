@@ -72,13 +72,13 @@ function saveBill(req, res) {
 
   //bill.applicaRivalsaInps = bill.applicaRivalsaInps && true || false;
   //bill.applicaRitenutaAcconto = bill.applicaRitenutaAcconto && true || false;
-  console.dir(bill)
+  
+  bill.anno = moment(bill.date).year();
 
-  function renderJSON() {
 
-    res.json({
-      ok: true
-    });
+  function renderJSON(rev) {
+
+    res.json(rev.data);
   }
 
   function failure(err) {
@@ -104,7 +104,7 @@ function enhanceLookups(model) {
   
   ft.applicaRivalsaInps = ft.applicaRivalsaInps || false;
   ft.applicaRitenutaAcconto = ft.applicaRitenutaAcconto || false;
-  console.dir(ft)
+ 
 
   return new Promise(function(resolve, reject) {
     model.clienti.forEach(function(c) {
@@ -121,8 +121,9 @@ function enhanceLookups(model) {
       a.value = JSON.stringify(a);
       a.isCurrent = a.description == ft.articoloIva.description;
     })
-
-    ft.printUrl = "/bills/print/" + encodeURIComponent(ft.formattedCode);
+    
+    ft.printUrl = "/bills/pdf-print/" + encodeURIComponent(ft.formattedCode);
+    ft.printUrlNewFormat = "/bills/pdf-print-new-format/" + encodeURIComponent(ft.formattedCode);
     ft.dateFt = moment(Number(ft.date)).format("YYYY-MM-DD");
 
     ft.scadenzaFt = moment(ft.scadenza).format("YYYY-MM-DD");
@@ -165,19 +166,69 @@ function renderBill(req, res) {
 }
 
 
-function renderPrintBill(req, res) {
+
+function printGenericBill (req, res, template){
+
+    var code = req.param("code");
+    //console.log(code)
+    billsStorage
+      .fatture.byCode(code)
+      .then(buildPrintModel)
+      .then(enhanceLookups)
+      .then(renderPrintBill(template,req, res))
+      .then(null, catchErr(res));
+
+}
+
+
+function pdfPrintBill(req, res) {
+  var code = encodeURIComponent(req.param("code"));
+
+  baseRoutes.pdf("/bills/print/"+code,req, res);
+
+}
+
+
+function pdfPrintBillNewFormat(req, res) {
+  var code = encodeURIComponent(req.param("code"));
+
+  baseRoutes.pdf("/bills/print-new-format/"+code,req, res);
+
+}
+
+
+
+function printBill(req, res) {
+  printGenericBill(req,res,"bills/print");
+
+}
+
+
+function printBillNewFormat(req, res) {
+  printGenericBill(req,res,"bills/print-new-format");
+
+}
+
+function renderPrintBill(template,req, res) {
   return function(model) {
     model.layout = "";
 
     var ft = model.bill,
       render;
 
-
+    ft.showTotaleRighe = ft.righe.length>1;
     ft.scadenzaFt = moment(Number(ft.scadenza)).format("DD/MM/YYYY");
     ft.dateFt = moment(Number(ft.date)).format("DD/MM/YYYY");
     ft.totaleFt = accounting.formatMoney(ft.totale, "€ ", 2, ".", ",");
     ft.ivaFt = accounting.formatMoney(ft.iva, "€ ", 2, ".", ",");
     ft.imponibileFt = accounting.formatMoney(ft.imponibile, "€ ", 2, ".", ",");
+    ft.imponibileBaseFt = accounting.formatMoney(ft.imponibileBase, "€ ", 2, ".", ",");
+    ft.rivalsaInpsFt = accounting.formatMoney(ft.rivalsaInps, "€ ", 2, ".", ",");
+    ft.ritenutaAccontoFt = accounting.formatMoney(ft.ritenutaAcconto, "€ ", 2, ".", ",");
+    
+    ft.totaleFt = accounting.formatMoney(ft.totale, "€ ", 2, ".", ",");
+    ft.totaleFatturaFt = accounting.formatMoney(ft.totaleFattura, "€ ", 2, ".", ",");
+    
     ft.pagamentoDescr = ft.pagamento.description;
 
     ft.righe.forEach(function(riga) {
@@ -186,7 +237,7 @@ function renderPrintBill(req, res) {
       riga.totalFt = accounting.formatMoney(riga.total, "€ ", 2, ".", ",");
     });
 
-    render = baseRoutes.template("bills/print", null, model);
+    render = baseRoutes.template(template, null, model);
 
     render(req, res);
   }
@@ -240,17 +291,6 @@ function cliente(req, res) {
     .then(null, catchErr(res));
 }
 
-function printBill(req, res) {
-  var code = req.param("code");
-  //console.log(code)
-  billsStorage
-    .fatture.byCode(code)
-    .then(buildPrintModel)
-    .then(enhanceLookups)
-    .then(renderPrintBill(req, res))
-    .then(null, catchErr(res));
-
-}
 
 
 module.exports = {
@@ -260,5 +300,8 @@ module.exports = {
   saveBill: saveBill,
   newBill: newBill,
   printBill: printBill,
+  printBillNewFormat: printBillNewFormat,
+  pdfPrintBill: pdfPrintBill,
+  pdfPrintBillNewFormat: pdfPrintBillNewFormat,
   cliente: cliente
 }

@@ -35,6 +35,9 @@ module.exports = function(app) {
     app.get('/cliente/:codicefiscale', billsRoutes.cliente);
     app.get('/bills/:code', billsRoutes.editBill);
     app.get('/bills/print/:code', billsRoutes.printBill);
+    app.get('/bills/print-new-format/:code', billsRoutes.printBillNewFormat);
+    app.get('/bills/pdf-print/:code', billsRoutes.pdfPrintBill);
+    app.get('/bills/pdf-print-new-format/:code', billsRoutes.pdfPrintBillNewFormat);
     app.get('/bills-new', billsRoutes.newBill);
     app.get('/bill-data/:code', billsRoutes.bill);
     app.post('/bill-data/:code', billsRoutes.saveBill);

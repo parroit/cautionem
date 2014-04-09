@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+{{# bill }}
+<head>
+    <title>ft_{{ formattedCode}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/print.css' />
+
+
+</head>
+
+<body class="printed-fattura">
+
+    <article>
+        <div class="title">Fattura</div>
+        <header>
+            <section id="provider">
+                <span id="provider-description" class="description">Andrea Parodi</span>
+                <span id="provider-indirizzo" class="indirizzo">Via Casata Centuriona 2/16B</span>
+                <span id="provider-cap">16139</span>
+                <span id="provider-comune">Genova</span>(
+                <span id="provincia">GE</span>)
+                <div id="provider-codiceFiscale">
+                    <span class="label">Cod.Fiscale</span>
+                    <span class="value">PRDNDR76A03D969Q</span>
+                </div>
+                <div id="provider-partitaIva">
+                    <span class="label">P. Iva</span>
+                    <span class="value">01747660999</span>
+                </div>
+
+            </section>
+
+            <section id="customer">
+                {{# cliente }}
+                <span id="cliente-description" class="description">{{ description }}</span>
+                <span id="cliente-secondaDescrizione" class="description">
+                {{ secondaDescrizione }}</span>
+                <span id="cliente-indirizzo" class="indirizzo">{{ indirizzo }}</span>
+                <span id="cliente-cap">{{ cap }}</span>
+                <span id="cliente-comune">{{ comune }}</span>(
+                <span id="cliente-provincia">{{ provincia }}</span>)
+
+                <div id="cliente-codiceFiscale">
+                    <span class="label">Cod.Fiscale</span>
+                    <span class="value">{{ codiceFiscale }}</span>
+                </div>
+                <div id="cliente-partitaIva">
+                    <span class="label">P. Iva</span>
+                    <span class="value">{{ partitaIva }}</span>
+                </div>
+                {{/ cliente}}
+                <section id="ft-dettagli">
+
+                    <div id="formattedCode">
+                        <span class="label">Fattura N°</span>
+                        <span class="value">{{ formattedCode}}</span>
+                    </div>
+
+                    <div id="date">
+                        <span class="label">Data</span>
+                        <span class="value">{{ dateFt }}</span>
+                    </div>
+
+
+                </section>
+            </section>
+
+
+        </header>
+        <section id="righe">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Descrizione</th>
+                        <th>Prezzo Unitario</th>
+                        <th>Quantità</th>
+                        <th>Prezzo Totale</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {{# righe}}
+                    <tr class="riga-ft" id="riga-{{ numeroRiga}}">
+
+
+                        <td class="description">{{ description}}</td>
+                        <td class="prezzoCadauno">
+                            <span {{ pricesClass}}>{{ prezzoCadaunoFt }}</span>
+                        </td>
+                        <td class="quantita">{{ quantitaFt}}</td>
+                        <td class="total">
+                            <span {{ pricesClass}}>{{ totalFt }}</span>
+                        </td>
+
+
+                    </tr>
+                    {{/ righe}}
+
+                </tbody>
+                <tfoot>
+                    {{# showTotaleRighe}}
+                    <tr>
+                        <td class="description">&nbsp;</td>
+                        <td colspan="2" class="two-cols">Totale</td>
+                        <td class="total">{{ imponibileBaseFt }}</td>
+
+                    </tr>
+                   {{/ showTotaleRighe}}
+
+                    <tr>
+                        <td class="description">4% rivalsa INPS su {{ imponibileBaseFt }}</td>
+                        <td colspan="2" class="two-cols">&nbsp;</td>
+                        <td class="total">{{ rivalsaInpsFt }}</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="description">&nbsp;</td>
+                        <td colspan="2" class="two-cols">Imponibile</td>
+                        <td class="total">{{ imponibileFt }}</td>
+
+                    </tr>
+                    
+
+
+                    <tr>
+                        <td class="description">IVA 22% su {{ imponibileFt }}</td>
+                        <td colspan="2" class="two-cols">&nbsp;</td>
+                        <td class="total">{{ ivaFt }}</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="description">&nbsp;</td>
+                        <td colspan="2" class="two-cols">Totale fattura</td>
+                        <td class="total">{{ totaleFatturaFt }}</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="description">A dedurre ritenuta d'acconto 20% su {{ imponibileFt }}</td>
+                        <td colspan="2" class="two-cols">&nbsp;</td>
+                        <td class="total">{{ ritenutaAccontoFt }}</td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="description">&nbsp;</td>
+                        <td colspan="2" class="two-cols">Netto percepito</td>
+                        <td class="total">{{ totaleFt }}</td>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+
+        <footer>
+            <div>
+                <span id="pagamento">Pagamento fattura: {{ pagamentoDescr }}</span>
+                <span id="scadenza">Scadenza: {{ scadenzaFt }}</span>
+            </div>
+            <div class="coordinate">
+                Coordinate Bancarie:
+                <br>Monte Dei Paschi di Siena - Agenzia Genova 05
+                <br>Conto Corr. 000000295770
+                <br>ABI 01030
+                <br>CAB 01404
+                <br>IBAN IT02S0103001404000000295770
+                <br>
+            </div>
+          
+        </footer>
+    </article>
+
+
+</body>
+{{/ bill }}
+</html>

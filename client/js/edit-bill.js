@@ -84,6 +84,10 @@ define(["jquery", "/model/enhance-fattura.js", "/js/fattura-observable.js", "for
         $save.removeAttr("disabled");
       });
 
+      observedFt.righe.events.on('changed', function(propertyName, value) {
+        $save.removeAttr("disabled");
+      });
+
       $.get("/templates/riga-fattura.html", function(data) {
         templateContent = data;
         $newRow.removeAttr("disabled");
@@ -131,23 +135,25 @@ define(["jquery", "/model/enhance-fattura.js", "/js/fattura-observable.js", "for
             data: JSON.stringify(bill),
             complete: billSaved,
             headers: {
-                "content-type":"application/json"
+              "content-type": "application/json"
             },
             type: "post"
           }
         );
       });
 
-    }
+      function billSaved(data, textStatus, jqXHR) {
+        if (textStatus == "success" && data.responseJSON.ok) {
+          bill._rev = data.responseJSON.rev;
+          $save.attr("disabled","");
+          alert("fattura salvata");
+        } else {
+          alert("impossibile salvare.");
+        }
 
-    function billSaved(data, textStatus, jqXHR) {
-      if (data.ok) {
-        alert("fattura salvata");
-      } else {
-        alert("impossibile salvare: " + data.reason);
       }
-
     }
+
 
     function buildURL() {
       var code = encodeURIComponent($("#formattedCode").val());

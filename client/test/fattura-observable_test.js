@@ -185,10 +185,10 @@ describe("Observable", function() {
           "value": true
         }, {
           "propertyName": "ritenutaAcconto",
-          "value": 140
+          "value": 145.6
         }, {
           "propertyName": "totale",
-          "value": 660.8
+          "value": 655.2
         }
 
             ])).to.be.equal(true);
