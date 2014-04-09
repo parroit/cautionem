@@ -14,12 +14,19 @@ function defineModule(moment, enhanceRiga, _) {
       enhanceRiga(riga);
     });
 
+    function curr(v){
+  
+      v = Math.round(v * 100) / 100;
+  
+      return v;
+    }
+
     define(dati, "rivalsaInps", function() {
-      return this.applicaRivalsaInps ? this.imponibileBase * 4 / 100 : 0;
+      return curr(this.applicaRivalsaInps ? this.imponibileBase * 4 / 100 : 0);
     });
 
     define(dati, "ritenutaAcconto", function() {
-      return this.applicaRitenutaAcconto ? this.imponibile * 20 / 100 : 0;
+      return curr(this.applicaRitenutaAcconto ? this.imponibileBase * 20 / 100 : 0);
     });
 
     define(dati, "scadenza", function() {
@@ -50,12 +57,12 @@ function defineModule(moment, enhanceRiga, _) {
     });
 
     define(dati, "iva", function() {
-      return this.imponibile * this.articoloIva.percentuale / 100;
+      return curr(this.imponibile * this.articoloIva.percentuale / 100);
 
     });
 
     define(dati, "totale", function() {
-      return this.imponibile + this.iva - this.ritenutaAcconto;
+      return curr(this.imponibile + this.iva - this.ritenutaAcconto);
 
     });
     return dati;

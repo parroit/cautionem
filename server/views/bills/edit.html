@@ -240,31 +240,58 @@
         </div>
 
         <div class="row">
-            <div class="third">
+            <div class="sixth">
                 <section>
-                    <label for="imponibile" class="col-md-3 control-label">Imponibile</label>
+                    <label for="imponibileBase" class="col-md-3 control-label">Base imponibile</label>
 
-                    <input readonly type="number" id="imponibile" value="{{ bill.imponibile }}">
+                    <input  class="input-small" readonly type="number" id="imponibileBase" value="{{ bill.imponibileBase }}">
 
                 </section>
             </div>
 
-            <div class="third">
+            <div class="sixth">
+                <section>
+                    <label for="rivalsaInps" class="col-md-3 control-label">Rivalsa Inps</label>
+
+                    <input  class="input-small" readonly type="number" id="rivalsaInps" value="{{ bill.rivalsaInps }}">
+
+                </section>
+            </div>
+
+
+            <div class="sixth">
+                <section>
+                    <label for="imponibile" class="col-md-3 control-label">Imponibile</label>
+
+                    <input  class="input-small" readonly type="number" id="imponibile" value="{{ bill.imponibile }}">
+
+                </section>
+            </div>
+
+            <div class="sixth">
                 <section>
                     <label for="iva">IVA</label>
 
 
-                    <input readonly type="number" id="iva" value="{{ bill.iva }}">
+                    <input  class="input-small" readonly type="number" id="iva" value="{{ bill.iva }}">
 
                 </section>
             </div>
+            
+            <div class="sixth">
+                <section>
+                    <label for="ritenutaAcconto" class="col-md-3 control-label">Ritenuta Acconto</label>
 
-            <div class="third">
+                    <input  class="input-small" readonly type="number" id="ritenutaAcconto" value="{{ bill.ritenutaAcconto }}">
+
+                </section>
+            </div>
+            <div class="sixth">
                 <section>
                     <label for="totale">Totale</label>
 
 
-                    <input readonly type="number" id="totale" value="{{ bill.totale }}">
+                    <input  class="input-small" readonly type="number" id="totale" value="{{ bill.totale }}">
 
                 </section>
             </div>

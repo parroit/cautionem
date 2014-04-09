@@ -185,10 +185,10 @@ describe("Observable", function() {
           "value": true
         }, {
           "propertyName": "ritenutaAcconto",
-          "value": 145.6
+          "value": 140
         }, {
           "propertyName": "totale",
-          "value": 655.1999999999999
+          "value": 660.8
         }
 
             ])).to.be.equal(true);
@@ -196,7 +196,7 @@ describe("Observable", function() {
 
     });
 
-    it("emit changed event for imponibile, totale, rivalsaInps, ritenutaAcconto and i iva on quantita riga changed", function() {
+    it("emit changed event for imponibile, totale, rivalsaInps, ritenutaAcconto and iva on quantita riga changed", function() {
       observableFattura.applicaRivalsaInps = false;
       observableFattura.applicaRitenutaAcconto = false;
       results = [];
