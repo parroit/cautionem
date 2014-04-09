@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+{{# bill }}
+
+<head>
+  <title>pv_{{ formattedCode}}</title>
+  <meta charset="utf-8">
+  <link rel='stylesheet' href='/css/print.css' />
+
+
+</head>
+
+<body class="printed-fattura">
+
+  <article>
+    <div class="title">Preventivo</div>
+    <header>
+      <section id="provider">
+        <span id="provider-description" class="description">Andrea Parodi</span>
+        <span id="provider-indirizzo" class="indirizzo">Via Casata Centuriona 2/16B</span>
+        <span id="provider-cap">16139</span>
+        <span id="provider-comune">Genova</span>(
+        <span id="provincia">GE</span>)
+        <div id="provider-codiceFiscale">
+          <span class="label">Cod.Fiscale</span>
+          <span class="value">PRDNDR76A03D969Q</span>
+        </div>
+        <div id="provider-partitaIva">
+          <span class="label">P. Iva</span>
+          <span class="value">01747660999</span>
+        </div>
+
+      </section>
+
+      <section id="customer">
+        {{# cliente }}
+        <span id="cliente-description" class="description">{{ description }}</span>
+        <span id="cliente-secondaDescrizione" class="description">
+          {{ secondaDescrizione }}</span>
+        <span id="cliente-indirizzo" class="indirizzo">{{ indirizzo }}</span>
+        <span id="cliente-cap">{{ cap }}</span>
+        <span id="cliente-comune">{{ comune }}</span>(
+        <span id="cliente-provincia">{{ provincia }}</span>)
+
+        <div id="cliente-codiceFiscale">
+          <span class="label">Cod.Fiscale</span>
+          <span class="value">{{ codiceFiscale }}</span>
+        </div>
+        <div id="cliente-partitaIva">
+          <span class="label">P. Iva</span>
+          <span class="value">{{ partitaIva }}</span>
+        </div>
+        {{/ cliente}}
+        <section id="ft-dettagli">
+              <div id="date">
+                  <span class="label">Data</span>
+                  <span class="value">{{ dateFt }}</span>
+              </div>
+
+
+        </section>
+      </section>
+  
+    </header>
+  
+  <section id="intro">
+In riferimento alla Vs. cortese richiesta, ci pregiamo sottoporVi la ns. migliore offerta per il lavoro avente le seguenti caratteristiche:
+  </section>
+
+    <section id="righe">
+      <table>
+
+        <thead>
+          <tr>
+            <th>Descrizione</th>
+            
+            <th
+              {{^ someHasQty}}  
+              colspan="3"
+              {{/ someHasQty}}
+            >
+              Prezzo Unitario
+            </th>
+            
+            {{# someHasQty }}
+            <th>Quantità</th>
+            <th>Prezzo Totale</th>
+            {{/ someHasQty }}
+          </tr>
+
+        </thead>
+        <tbody>
+          {{# righe}}
+          <tr class="riga-ft" id="riga-{{ numeroRiga}}">
+
+
+            <td class="description">{{ description}}</td>
+            <td 
+              class="prezzoCadauno"
+              
+              {{^ hasQty}}  
+              colspan="3"
+              {{/ hasQty}}
+              >
+
+              <span {{ pricesClass}}>{{ prezzoCadaunoFt }}</span>
+            </td>
+            {{# hasQty}}
+            <td class="quantita">{{ quantitaFt}}</td>
+            <td class="total">
+              <span {{ pricesClass}}>{{ totalFt }}</span>
+            </td>
+            {{/ hasQty}}
+
+
+          </tr>
+          {{/ righe}}
+
+        </tbody>
+        
+      </table>
+    </section>
+
+
+    <footer>
+      
+      
+      <div>
+          <span id="pagamento">Pagamento: {{ pagamentoDescr }}</span>
+          <span id="scadenza">Scadenza preventivo: 15 gg.</span>
+      </div>
+
+      <div id="note">
+        I prezzi si intendono IVA e rivalsa INPS esclusa.  <br>
+        La validità del preventivo è in ogni caso subordinata alla reale fattibilità al momento della definizione dell’ordine. <br>
+        La sottoscrizione del presente documento implica l'accettazione dei prezzi, dei tempi di consegna, del metodo e dei tempi di pagamento. <br>
+        Con il presente preventivo si annullano automaticamente i precedenti . <br>
+        Per qualsiasi chiarimento e informazione rimango a Vs. disposizione.<br>
+      </div>
+    </footer>
+  </article>
+
+
+</body>
+{{/ bill }}
+
+</html>

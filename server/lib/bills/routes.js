@@ -126,6 +126,7 @@ function enhanceLookups(model) {
     ft.printUrl = "/bills/pdf-print/" + encodeURIComponent(ft.formattedCode);
     ft.printUrlNewFormat = "/bills/pdf-print-new-format/" + encodeURIComponent(ft.formattedCode);
     ft.printUrlProforma = "/bills/pdf-print-proforma/" + encodeURIComponent(ft.formattedCode);
+    ft.printUrlPreventivo = "/bills/pdf-print-preventivo/" + encodeURIComponent(ft.formattedCode);
     ft.dateFt = moment(Number(ft.date)).format("YYYY-MM-DD");
 
     ft.scadenzaFt = moment(ft.scadenza).format("YYYY-MM-DD");
@@ -199,6 +200,14 @@ function pdfPrintBillProforma(req, res) {
 }
 
 
+function pdfPrintBillPreventivo(req, res) {
+  var code = encodeURIComponent(req.param("code"));
+
+  baseRoutes.pdf("/bills/print-preventivo/"+code,req, res);
+
+}
+
+
 function pdfPrintBillNewFormat(req, res) {
   var code = encodeURIComponent(req.param("code"));
 
@@ -224,6 +233,13 @@ function printBillProforma(req, res) {
   printGenericBill(req,res,"bills/print-proforma");
 
 }
+
+
+function printBillPreventivo(req, res) {
+  printGenericBill(req,res,"bills/print-preventivo");
+
+}
+
 
 function renderPrintBill(template,req, res) {
   return function(model) {
@@ -321,5 +337,7 @@ module.exports = {
   pdfPrintBillNewFormat: pdfPrintBillNewFormat,
   cliente: cliente,
   printBillProforma: printBillProforma,
-  pdfPrintBillProforma: pdfPrintBillProforma
+  pdfPrintBillProforma: pdfPrintBillProforma,
+  printBillPreventivo: printBillPreventivo,
+  pdfPrintBillPreventivo: pdfPrintBillPreventivo
 }

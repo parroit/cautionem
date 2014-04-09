@@ -16,6 +16,11 @@ function defineModule(moment, _){
             //console.log("TOTAL: %d",total);
             return  total;
         });
+
+        define(dati, "hasQty", function () {
+
+            return  this.quantita != 0;
+        });
         return dati;
     }
 

@@ -1,174 +1,142 @@
 .hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 body {
-  padding: 1cm 0.5cm;
+    padding: 1cm 0.5cm;
 }
 article {
-  font-size: 13pt;
-  line-height: 1.5em;
-  font-family: sans-serif;
-  width: 21cm;
-  height: 29cm;
-  position: absolute;
+    font-size: 13pt;
+    line-height: 1.5em;
+    font-family: sans-serif;
+    width: 21cm;
+    height: 29cm;
+    position: absolute;
 }
-
 .title {
-  font-size: 42pt;
-  color: #666666;
-  display: block;
-
-  margin-left: 0.5cm;
-  margin-bottom: 1cm;
-  margin-top: 1cm;
+    font-size: 42pt;
+    color: #666666;
+    display: block;
+    margin-left: 0.5cm;
+    margin-bottom: 1cm;
+    margin-top: 1cm;
 }
-
 header {
-  width: 20cm;
-  margin-left: 0.5cm;
-  height: 6cm;
-
-  #provider,#customer {
-    display: inline-block;
-    border: 1px solid #dddddd;
-    width: 8.5cm;
-    border-radius: 0.2cm;
-    padding: 0.5cm;
+    width: 20cm;
+    margin-left: 0.5cm;
     height: 6cm;
-    overflow: hidden;
-
-
-    span {
-      display: inline-block;
+    #provider, #customer {
+        display: inline-block;
+        border: 1px solid #dddddd;
+        width: 8.5cm;
+        border-radius: 0.2cm;
+        padding: 0.5cm;
+        height: 6cm;
+        overflow: hidden;
+        span {
+            display: inline-block;
+        }
+        .description {
+            display: block;
+        }
+        .indirizzo {
+            display: block;
+        }
+        span.label {
+            width: 3cm;
+        }
     }
-
-    .description {
-      display: block;
+    #provider {
+        float: left;
     }
-
-    .indirizzo {
-      display: block;
+    #customer {
+        float: right;
     }
-
-    span.label {
-      width: 3cm;
-    }
-  }
-  #provider{
-    float: left;
-  }
-  #customer {
-   float: right;
-  }
 }
-
-
-
 #ft-dettagli {
-  border-top: 1px solid #dddddd;
-  margin-top: 0.5cm;
-}
-
-#righe {
-  border: 1px solid #dddddd;
-  border-radius: 0.2cm;
-  padding: 0;
-  margin-left: 0.5cm;
-  display: block;
-  margin-top: 2cm;
-  width: 20cm;
-  margin-top: 2cm;
-
-  table{
-
-    font-size: 10pt;
-
-
-    border-collapse: collapse;
-
-    .prezzoCadauno,.quantita,.total {
-      text-align: right;
-      width: 2cm;
-    }
-
-    .two-cols {
-      width: 4cm;
-    }
-    .description {
-      width: 14cm;
-    }
-
-    tfoot {
-      font-weight: bold;
-
-      .description {
-        font-weight: normal;
-      }
-
-      tr:last-child td {
-        border-bottom: none;
-      }
-    }
-
-
-
-    td,th {
-      border-right: 1px solid #dddddd;
-      border-bottom: 1px solid #dddddd;
-      margin: 0;
-      padding: 0.1cm;
-    }
-    td:last-child, th:last-child {
-      border-right: none;
-    }
-  }
-}
-
-
-
-
-footer {
-  position: absolute;
-  margin-left: 0.5cm;
-  bottom: 0cm;
-  border: 1px solid #dddddd;
-  width: 20cm;
-  border-radius: 0.2cm;
-
-  div {
-    padding: 0.4cm;
     border-top: 1px solid #dddddd;
-    padding-bottom: 0.1cm;
-    padding-top: 0.1cm;
-  }
-
-  #pagamento, #scadenza {
-    width: 45%;
-
-    display: inline-block;
-    padding: 0.4cm;
-  }
-  #scadenza {
-    border-left: 1px solid #dddddd;
-  }
-  div:first-child {
+    margin-top: 0.5cm;
+}
+#righe {
+    border: 1px solid #dddddd;
+    border-radius: 0.2cm;
     padding: 0;
-    span {
-      padding: 0.4cm;
+    margin-left: 0.5cm;
+    display: block;
+    margin-top: 2cm;
+    width: 20cm;
+    margin-top: 2cm;
+    table {
+        font-size: 10pt;
+        border-collapse: collapse;
+        .prezzoCadauno, .quantita, .total {
+            text-align: right;
+            width: 2cm;
+        }
+        .two-cols {
+            width: 4cm;
+        }
+        .description {
+            width: 14cm;
+        }
+        tfoot {
+            font-weight: bold;
+            .description {
+                font-weight: normal;
+            }
+            tr:last-child td {
+                border-bottom: none;
+            }
+        }
+        td, th {
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+            margin: 0;
+            padding: 0.1cm;
+        }
+        td:last-child, th:last-child {
+            border-right: none;
+        }
     }
-    border-top: none;
-
-  }
-
-  .coordinate {
-    font-size: 12pt;
-  }
 }
-
+footer {
+    position: absolute;
+    margin-left: 0.5cm;
+    bottom: 0cm;
+    border: 1px solid #dddddd;
+    width: 20cm;
+    border-radius: 0.2cm;
+    div {
+        padding: 0.4cm;
+        border-top: 1px solid #dddddd;
+        padding-bottom: 0.1cm;
+        padding-top: 0.1cm;
+    }
+    #pagamento, #scadenza {
+        width: 45%;
+        display: inline-block;
+        padding: 0.4cm;
+    }
+    #scadenza {
+        border-left: 1px solid #dddddd;
+    }
+    div:first-child {
+        padding: 0;
+        span {
+            padding: 0.4cm;
+        }
+        border-top: none;
+    }
+    .coordinate {
+        font-size: 12pt;
+    }
+}
 #note {
-  font-size: 8pt;
-
-  display: block;
-
+    font-size: 8pt;
+    display: block;
 }
-
+#intro {
+    display: block;
+    margin-top: 80px;
+    margin-bottom: -40px;
+    margin-left: 20px;
+}

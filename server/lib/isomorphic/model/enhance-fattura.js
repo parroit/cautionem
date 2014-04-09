@@ -20,6 +20,11 @@ function defineModule(moment, enhanceRiga, _) {
   
       return v;
     }
+  
+    define(dati, "someHasQty", function () {
+
+            return  this.righe.some(function(r){return r.hasQty});
+    });
 
     define(dati, "rivalsaInps", function() {
       return curr(this.applicaRivalsaInps ? this.imponibileBase * 4 / 100 : 0);

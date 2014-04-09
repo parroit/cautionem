@@ -37,9 +37,13 @@ module.exports = function(app) {
     app.get('/bills/print/:code', billsRoutes.printBill);
     app.get('/bills/print-new-format/:code', billsRoutes.printBillNewFormat);
     app.get('/bills/print-proforma/:code', billsRoutes.printBillProforma);
+    app.get('/bills/pdf-print-proforma/:code', billsRoutes.pdfPrintBillProforma);
+    app.get('/bills/print-preventivo/:code', billsRoutes.printBillPreventivo);
+    app.get('/bills/pdf-print-preventivo/:code', billsRoutes.pdfPrintBillPreventivo);
+    
     app.get('/bills/pdf-print/:code', billsRoutes.pdfPrintBill);
     app.get('/bills/pdf-print-new-format/:code', billsRoutes.pdfPrintBillNewFormat);
-    app.get('/bills/pdf-print-proforma/:code', billsRoutes.pdfPrintBillProforma);
+    
     app.get('/bills-new', billsRoutes.newBill);
     app.get('/bill-data/:code', billsRoutes.bill);
     app.post('/bill-data/:code', billsRoutes.saveBill);
