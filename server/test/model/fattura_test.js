@@ -102,7 +102,8 @@ describe("fattura", function() {
         righe: [],
         type: "fattura",
         applicaRivalsaInps: false,
-        applicaRitenutaAcconto: false
+        applicaRitenutaAcconto: false,
+        proForma: false
       };
 
       expect(_.isEqual(expected, ft)).to.be.equal(true);
