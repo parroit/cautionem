@@ -4,22 +4,28 @@ module.exports = function(grunt) {
 
     var browsers = [{
         browserName: "firefox",
-        version: "19",
-        platform: "XP"
+        platform: "Windows 7",
+        version: "28"
+    },{
+        browserName: "firefox",
+        platform: "linux",
+        version: "28"
     }, {
         browserName: "chrome",
-        platform: "XP"
+        platform: "linux",
+        version: "33"
     }, {
         browserName: "chrome",
-        platform: "linux"
+        platform: "Windows 7",
+        version: "33"
     }, {
         browserName: "internet explorer",
-        platform: "WIN8",
+        platform: "Windows 7",
+        version: "11"
+    }, {
+        browserName: "internet explorer",
+        platform: "Windows 7",
         version: "10"
-    }, {
-        browserName: "internet explorer",
-        platform: "VISTA",
-        version: "9"
     }];
 
     // Project configuration.
@@ -65,6 +71,7 @@ module.exports = function(grunt) {
         mochaTest: {
             test: {
                 options: {
+                    timeout: 120000,
                     reporter: "spec"
                 },
                 src: ["server/test/**/*.js"]

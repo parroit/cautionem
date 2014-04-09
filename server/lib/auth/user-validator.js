@@ -105,7 +105,7 @@ function validateUser(user, authStorage, cb) {
     }
 
     if (promises.length) {
-        console.log("I Promise")
+//        console.log("I Promise")
         Promise.all(promises)
             .then(resolveValidation);
 

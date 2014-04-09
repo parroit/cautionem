@@ -94,7 +94,7 @@ describe("form-view", function() {
     it("emit converted changed event for date input changed", function(done) {
       form.events.once('changed', function(propertyName, value) {
         expect(propertyName).to.be.equal("fieldDate");
-        expect(value).to.be.equal(1386889200000);
+        expect(Math.abs(value - 1386889200000)).to.be.lessThan(50000000);
         done();
       });
 
@@ -133,7 +133,7 @@ describe("form-view", function() {
       });
 
       it("change input field value", function() {
-        form.set("fieldDate", 1356994800000);
+        form.set("fieldDate", 1357066523000);
         expect($("#fieldDate").val()).to.be.equal("2013-01-01");
       });
     });
