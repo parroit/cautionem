@@ -7,6 +7,7 @@ var couch= require("couch-promise");
 module.exports = {
     init: function (options) {
         this.options = options;
+        console.dir(options.couch)
         return couch.init(options.couch);
 
 
@@ -14,6 +15,7 @@ module.exports = {
 
     },
     login: function(user,password){
+        console.dir(user+":"+password)
         return couch.login(user,password);
     },
 

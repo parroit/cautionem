@@ -10,17 +10,22 @@ function defineModule(moment, _){
     }
 
     function enhanceRiga(dati) {
-        define(dati, "total", function () {
+        try {
+            define(dati, "total", function () {
 
-            var total = this.prezzoCadauno * this.quantita;
-            //console.log("TOTAL: %d",total);
-            return  total;
-        });
+                var total = this.prezzoCadauno * this.quantita;
+                //console.log("TOTAL: %d",total);
+                return  total;
+            });
 
-        define(dati, "hasQty", function () {
+            define(dati, "hasQty", function () {
 
-            return  this.quantita != 0;
-        });
+                return  this.quantita != 0;
+            });    
+        } catch(err){
+            console.log(err);
+        }
+        
         return dati;
     }
 
