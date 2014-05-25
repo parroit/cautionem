@@ -14,5 +14,7 @@ function login(config) {
 
 
 module.exports = function(config) {
-    init(config).then( login(config) );
+    return init(config).then( function(){
+        return login(config); 
+    });
 };
